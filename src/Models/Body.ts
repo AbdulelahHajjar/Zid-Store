@@ -1,5 +1,4 @@
 import Product from "./Product";
-
 class Body {
 	cover_image: String;
 	hot_products: Product[];
