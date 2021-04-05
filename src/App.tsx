@@ -2,7 +2,7 @@ import React from "react";
 import HomePage from "./Pages/HomePage";
 import CartPage from "./Pages/CartPage";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import NavigationBar from "./Models/NavigationBar";
+import NavigationBar from "./Components/NavigationBar";
 
 function App() {
 	return (
