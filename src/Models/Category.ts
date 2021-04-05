@@ -1,8 +1,8 @@
 class Category {
-	name: String;
-	link: String;
+	name: string;
+	link: string;
 
-	constructor(name: String, link: String) {
+	constructor(name: string, link: string) {
 		this.name = name;
 		this.link = link;
 	}

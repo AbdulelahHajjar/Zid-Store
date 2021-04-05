@@ -1,16 +1,16 @@
 class Store {
-	id: String;
-	name: String;
-	ssl: String;
-	currency: String;
-	language_code: String;
+	id: string;
+	name: string;
+	ssl: string;
+	currency: string;
+	language_code: string;
 
 	constructor(
-		id: String,
-		name: String,
-		ssl: String,
-		currency: String,
-		language_code: String
+		id: string,
+		name: string,
+		ssl: string,
+		currency: string,
+		language_code: string
 	) {
 		this.id = id;
 		this.name = name;

@@ -1,9 +1,9 @@
 class Action {
-	type: String;
-	text: String;
-	value: String;
+	type: string;
+	text: string;
+	value: string;
 
-	constructor(type: String, text: String, value: String) {
+	constructor(type: string, text: string, value: string) {
 		this.type = type;
 		this.text = text;
 		this.value = value;

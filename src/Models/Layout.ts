@@ -4,13 +4,13 @@ import Navigation from "./Navigation";
 
 class Layout {
 	messages: Message[];
-	logo: String;
+	logo: string;
 	navigation: Navigation;
 	body: Body;
 
 	constructor(
 		messages: Message[],
-		logo: String,
+		logo: string,
 		navigation: Navigation,
 		body: Body
 	) {

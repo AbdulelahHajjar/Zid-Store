@@ -1,11 +1,11 @@
 import Product from "./Product";
 class Body {
-	cover_image: String;
+	cover_image: string;
 	hot_products: Product[];
 	recent_products: Product[];
 
 	constructor(
-		cover_image: String,
+		cover_image: string,
 		hot_products: Product[],
 		recent_products: Product[]
 	) {

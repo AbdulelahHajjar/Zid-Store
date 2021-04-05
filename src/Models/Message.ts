@@ -1,9 +1,9 @@
 class Message {
-	text: String;
-	text_color: String;
-	background_color: String;
+	text: string;
+	text_color: string;
+	background_color: string;
 
-	constructor(text: String, text_color: String, background_color: String) {
+	constructor(text: string, text_color: string, background_color: string) {
 		this.text = text;
 		this.text_color = text_color;
 		this.background_color = background_color;

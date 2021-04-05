@@ -1,32 +1,32 @@
 class Product {
-	id: String;
-	model: String;
-	sku: String;
-	quantity: Number;
-	stock_status: String;
-	image: String;
-	price: Number;
-	old_price: Number;
-	minimum: Number;
-	share_link: String;
+	id: number;
+	model: string;
+	sku: string;
+	quantity: number;
+	stock_status: string;
+	image: string;
+	price: number;
+	old_price: number | null;
+	minimum: number;
+	share_link: string;
 	updated_at: Object;
-	name: String;
-	description: String;
+	name: string;
+	description: string;
 
 	constructor(
-		id: String,
-		model: String,
-		sku: String,
-		quantity: Number,
-		stock_status: String,
-		image: String,
-		price: Number,
-		old_price: Number,
-		minimum: Number,
-		share_link: String,
+		id: number,
+		model: string,
+		sku: string,
+		quantity: number,
+		stock_status: string,
+		image: string,
+		price: number,
+		minimum: number,
+		share_link: string,
 		updated_at: Object,
-		name: String,
-		description: String
+		name: string,
+		description: string,
+		old_price: number
 	) {
 		this.id = id;
 		this.model = model;
