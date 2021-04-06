@@ -1,6 +1,6 @@
 import React from "react";
-import storeLogo from "../Resources/Images/store-logo.png";
-import styles from "./NavigationBar.module.css";
+import storeLogo from "Resources/Images/store-logo.png";
+import styles from "./NavigationBar.module.scss";
 
 function NavigationBar() {
 	return (

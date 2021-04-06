@@ -1,0 +1,46 @@
+@use 'src/globals.scss';
+
+a, a:hover, a:focus, a:active .link {
+	text-decoration: none;
+	color: inherit;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin-left: 20px;
+	padding: 10px;
+	width: 200px;
+	height: auto;
+	background-color: rgb(255, 255, 255);
+	border-radius: 20px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.image {
+	object-fit: cover;
+	width: 100%;
+	border-radius: 20px;
+}
+
+.details {
+	display: flex;
+	flex-direction: row;
+	margin: 10px 10px;
+	align-items: center;
+	justify-items: center;
+	justify-content: space-between;
+	align-content: center;
+}
+
+.subtitle {
+	color: gray
+}
+
+.price_details {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}

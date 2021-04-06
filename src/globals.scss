@@ -1,0 +1,29 @@
+$accent-color: #777ff3;
+
+.truncated {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.title {
+	color: black;
+	font-size: 14pt;
+    font-weight: 600;
+}
+
+.subtitle {
+    font-size: 12pt;
+}
+
+.old_price {
+	color: #fe0134;
+	text-decoration: line-through;
+	font-size: 10pt;
+}
+
+.price {
+	color: $accent-color;
+	font-weight: bold;
+	font-size: 14pt;
+}

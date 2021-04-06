@@ -4,6 +4,7 @@ import data from "../Resources/Data/data.json";
 import Store from "../Models/Store";
 import Layout from "../Models/Layout";
 import Cart from "../Models/Cart";
+import ProductCardView from "Components/ProductCardView/ProductCardView";
 
 function HomePage() {
 	let store: Store = data.store;
@@ -20,6 +21,12 @@ function HomePage() {
 			<Link to={"/cart"}>
 				<p>Go to Cart</p>
 			</Link>
+
+			<div>
+				<p></p>
+			</div>
+
+			<ProductCardView product={data.layout.body.hot_products[1]} />
 		</div>
 	);
 }
