@@ -4,6 +4,7 @@ import StoreContext from "Contexts/StoreContext";
 import CoverImage from "Components/CoverImage/CoverImage";
 import LayoutContext from "Contexts/LayoutContext";
 import HorizontalList from "Components/HorizontalList/HorizontalList";
+import styles from "./HomePage.module.scss";
 
 function HomePage() {
 	const store = useContext(StoreContext);
@@ -17,9 +18,12 @@ function HomePage() {
 
 	return (
 		<div>
-			<CoverImage imageUrl={layout.body.cover_image} />
-			<HorizontalList />
-			<div style={{ height: "50vh" }}></div>
+			{/* <CoverImage imageUrl={layout.body.cover_image} /> */}
+
+			<div>
+				<HorizontalList rtl>{hotProducts()}</HorizontalList>
+				<div style={{ height: "50vh" }}></div>
+			</div>
 		</div>
 	);
 }

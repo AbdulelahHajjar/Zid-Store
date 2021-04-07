@@ -1,31 +1,26 @@
-.left {
+.container {
     float: left; 
-    width: 30%;
-    height: 200px;
-    border: 1px solid black;
-}
-   
-.internal {
-    width: 31.75%;
-    height: 100%;
-    border: 1px solid black;
-    display: inline-block;
-}
-   
-.center {
-    float: left; 
-    width: 38.9%;
-    height: 200px;
-    border: 1px solid black;
-    margin: 1px;
+    width: 100%;
     overflow: hidden;
-    /*will change this to hidden later to deny scolling to user*/
     white-space: nowrap;
 }
 
-.right {
-    float: right; 
-    width: 30%;
-    height: 200px;
-    border: 1px solid black;
+.controls {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.control_button {
+    height: 100px;
+    width: 100px;
+}
+
+.root_container {
+    overflow: overlay;
+    width: 100%;
+    position: relative;
 }
