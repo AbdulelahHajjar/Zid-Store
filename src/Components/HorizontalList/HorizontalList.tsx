@@ -1,4 +1,6 @@
-import "./HorizontalList.scss";
+import { useState } from "react";
+import styles from "./HorizontalList.module.scss";
+import ChevronLeft from "Resources/Images/chevron-left.png";
 
 type HorizontalListPropTypes = {
 	children;
@@ -6,10 +8,11 @@ type HorizontalListPropTypes = {
 };
 
 function HorizontalList({ children, rtl }: HorizontalListPropTypes) {
-	const scroll = (change: number) => {
-		let element = document.getElementById("content")!;
-		let duration = 300;
+	const [mouseOver, setMouseOver] = useState(false);
 
+	const scroll = (change: number) => {
+		let element = document.getElementById("center")!;
+		let duration = 300;
 		var start = element.scrollLeft,
 			currentTime = 0,
 			increment = 20;
@@ -40,26 +43,46 @@ function HorizontalList({ children, rtl }: HorizontalListPropTypes) {
 	};
 
 	return (
-		<div className="root_container">
-			<div className={"container"} id="content">
+		<div
+			className={styles.root_container}
+			onMouseEnter={() => setMouseOver(true)}
+			onMouseLeave={() => setMouseOver(false)}
+		>
+			<div className={styles.container} id="center">
 				{children}
 			</div>
-			<div className="controls">
+			<div className={styles.controls}>
 				<button
-					className="control_button"
+					className={`${styles.control_button} ${
+						mouseOver
+							? styles.control_shown
+							: styles.control_transparent
+					} ${styles.flipped}`}
 					onClick={() => {
 						rtl ? scrollRight() : scrollLeft();
 					}}
 				>
-					{"<"}
+					<img
+						src={ChevronLeft}
+						className={styles.control_image}
+						alt="Scroll"
+					/>
 				</button>
 				<button
-					className="control_button"
+					className={`${styles.control_button} ${
+						mouseOver
+							? styles.control_shown
+							: styles.control_transparent
+					}`}
 					onClick={() => {
 						rtl ? scrollLeft() : scrollRight();
 					}}
 				>
-					{">"}
+					<img
+						src={ChevronLeft}
+						className={styles.control_image}
+						alt="Scroll"
+					/>
 				</button>
 			</div>
 		</div>

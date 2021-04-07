@@ -18,12 +18,10 @@ function HomePage() {
 
 	return (
 		<div>
-			{/* <CoverImage imageUrl={layout.body.cover_image} /> */}
+			<CoverImage imageUrl={layout.body.cover_image} />
 
-			<div>
-				<HorizontalList rtl>{hotProducts()}</HorizontalList>
-				<div style={{ height: "50vh" }}></div>
-			</div>
+			<HorizontalList rtl>{hotProducts()}</HorizontalList>
+			<div style={{ height: "50vh" }}></div>
 		</div>
 	);
 }

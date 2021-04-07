@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useState } from "react";
 import "App.scss";
 
 import HomePage from "./Pages/HomePage/HomePage";

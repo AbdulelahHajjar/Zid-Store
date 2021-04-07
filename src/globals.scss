@@ -1,4 +1,9 @@
 $accent-color: #777ff3;
+$site-color: #f1f5ff;
+
+body {
+	background-color: $site-color;
+}
 
 .truncated {
 	white-space: nowrap;
