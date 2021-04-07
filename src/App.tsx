@@ -29,7 +29,7 @@ function App() {
 		<CartContext.Provider value={cart}>
 			<LayoutContext.Provider value={layout}>
 				<StoreContext.Provider value={store}>
-					<div className={store.readingDirectionCssClass()}>
+					<div className={"ltr"}>
 						<Router>
 							<NavigationBar />
 							<Route exact path="/" component={HomePage} />
