@@ -19,12 +19,8 @@ class Store {
 		this.language_code = language_code;
 	}
 
-	public readingDirectionCssClass(): string {
+	public htmlDirAttribute(): string {
 		return this.language_code === "ar" ? "rtl" : "ltr";
-	}
-
-	public toggleLanguage() {
-		this.language_code = this.language_code === "ar" ? "en" : "ar";
 	}
 }
 

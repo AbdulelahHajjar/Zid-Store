@@ -3,7 +3,7 @@ import ProductCardView from "Components/ProductCardView/ProductCardView";
 import StoreContext from "Contexts/StoreContext";
 import CoverImage from "Components/CoverImage/CoverImage";
 import LayoutContext from "Contexts/LayoutContext";
-import ScrollMenu from "react-horizontal-scrolling-menu";
+import HorizontalList from "Components/HorizontalList/HorizontalList";
 
 function HomePage() {
 	const store = useContext(StoreContext);
@@ -15,24 +15,19 @@ function HomePage() {
 		));
 	};
 
-	const onSelect = () => {
-		console.log("asdf");
-	};
-
 	return (
 		<div>
 			<CoverImage imageUrl={layout.body.cover_image} />
-			<ScrollMenu
-				wheel={false}
-				data={hotProducts()}
-				arrowLeft={<div>{"<"}</div>}
-				arrowRight={<div>{">"}</div>}
-				selected={undefined}
-				onSelect={onSelect}
-			/>
-			<CoverImage imageUrl={layout.body.cover_image} />
+			<HorizontalList />
+			<div style={{ height: "50vh" }}></div>
 		</div>
 	);
 }
 
 export default HomePage;
+
+const flexContainer = {
+	display: "flex",
+	flexDirection: "row",
+	padding: 0,
+};

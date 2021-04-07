@@ -29,7 +29,7 @@ function App() {
 		<CartContext.Provider value={cart}>
 			<LayoutContext.Provider value={layout}>
 				<StoreContext.Provider value={store}>
-					<div className={"ltr"}>
+					<div>
 						<Router>
 							<NavigationBar />
 							<Route exact path="/" component={HomePage} />
