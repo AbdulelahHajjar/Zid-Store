@@ -1,5 +1,7 @@
-import React from "react";
+import Store from "Models/Store";
+import React, { Dispatch, SetStateAction } from "react";
 import data from "Resources/Data/data.json";
 
-const StoreContext = React.createContext(data.store);
-export default StoreContext;
+let store: Store = JSON.parse(JSON.stringify(data.store));
+const StoreCotnext = React.createContext(store);
+export default StoreCotnext;
