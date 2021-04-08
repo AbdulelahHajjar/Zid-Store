@@ -1,5 +1,5 @@
-$accent-color: #777ff3;
-$accent-color-lighter: #a1a7f0;
+$accent-color: #ffd701;
+$accent-color-lighter: #ffeb80;
 $site-color: #f3f3f3;
 $primary-color: #434340;
 
@@ -20,8 +20,9 @@ body {
 }
 
 .largeTitle {
-	font-size: 34pt;
+	font-size: 28pt;
 	color: $primary-color;
+	font-weight: 600;
 }
 
 .subtitle {
