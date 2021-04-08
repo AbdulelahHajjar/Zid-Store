@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import styles from "./NavigationBar.module.scss";
 import cartIcon from "Resources/Images/cart.png";
 import CartContext from "Contexts/CartContext";
+import CategoriesBar from "Components/CategoriesBar/CategoriesBar";
 
 function NavigationBar() {
 	const layout = useContext(LayoutContext);
@@ -17,12 +18,14 @@ function NavigationBar() {
 	const brand = () => {
 		return (
 			<Navbar.Brand href="#">
-				<img
-					alt={store.name}
-					src={layout.logo}
-					height="72"
-					className="d-inline-block align-top"
-				/>
+				<Link to="/">
+					<img
+						alt={store.name}
+						src={layout.logo}
+						height="56"
+						className="d-inline-block align-top"
+					/>
+				</Link>
 			</Navbar.Brand>
 		);
 	};
@@ -44,11 +47,13 @@ function NavigationBar() {
 	const shoppingCart = () => {
 		return (
 			<Nav.Link>
-				<IconButton
-					icon={cartIcon}
-					badgeNumber={cart.numItems()}
-					alt={`Shopping Cart (Number of Items: ${cart.numItems()})`}
-				/>
+				<Link to={"/cart"}>
+					<IconButton
+						icon={cartIcon}
+						badgeNumber={cart.numItems()}
+						alt={`Shopping Cart (Number of Items: ${cart.numItems()})`}
+					/>
+				</Link>
 			</Nav.Link>
 		);
 	};
@@ -57,12 +62,12 @@ function NavigationBar() {
 		<Navbar
 			collapseOnSelect
 			expand="sm"
-			bg="light"
 			variant="light"
 			sticky="top"
 			className={styles.navigation_bar}
 		>
 			{brand()}
+
 			<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 			<Navbar.Collapse id="responsive-navbar-nav">
 				<Nav className={`mr-auto ${styles.actions_container}`}>

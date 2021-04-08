@@ -1,7 +1,8 @@
-$accent-color: #339696;
-$accent-color-lighter: #ffeb80;
+$accent-color: #673de6;
+$accent-color-lighter: lighter($accent-color, 10%);
 $site-color: #f3f3f3;
-$primary-color: #434340;
+$primary-color: #4a4a4a;
+$light: #ebebeb;
 
 body {
 	background-color: $site-color;
@@ -14,8 +15,8 @@ body {
 }
 
 .title {
-	color: black;
-	font-size: 12pt;
+	color: #4a4a4a;
+	font-size: 14pt;
     font-weight: 600;
 }
 
@@ -39,4 +40,12 @@ body {
 	color: $accent-color;
 	font-weight: bold;
 	font-size: 14pt;
+}
+
+.link {
+	font-weight: 600;
+}
+
+.link:hover {
+	color: $accent-color;
 }

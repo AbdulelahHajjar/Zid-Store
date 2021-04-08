@@ -14,6 +14,13 @@ import Store from "Models/Store";
 import Layout from "Models/Layout";
 import Cart from "Models/Cart";
 import MessageLine from "Components/MessageLine/MessageLine";
+import CategoriesBar from "Components/CategoriesBar/CategoriesBar";
+
+/*
+	Notes to self:
+		1- see convention for object name of scss module import
+		
+*/
 
 function App() {
 	const [store, setStore] = useState<Store>(Store.fromJSON(data.store));
@@ -35,6 +42,7 @@ function App() {
 								return <MessageLine message={message} />;
 							})} */}
 							<NavigationBar />
+							<CategoriesBar />
 							<Route exact path="/" component={HomePage} />
 							<Route exact path="/cart" component={CartPage} />
 						</Router>

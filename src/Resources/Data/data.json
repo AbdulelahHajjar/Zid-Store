@@ -48,7 +48,7 @@
 			]
 		},
 		"body": {
-			"cover_image": "https://dummyimage.com/1200x500/000/fff",
+			"cover_image": "https://source.unsplash.com/random/1200x500",
 			"hot_products": [
 				{        
 				    "id": 19795,
