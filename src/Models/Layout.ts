@@ -19,6 +19,14 @@ class Layout {
 		this.navigation = navigation;
 		this.body = body;
 	}
+
+	static fromJSON(json: object): Layout {
+		//TODO
+		return Object.assign(
+			new Layout([], "", new Navigation([], []), new Body("", [], [])),
+			JSON.parse(JSON.stringify(json))
+		);
+	}
 }
 
 export default Layout;

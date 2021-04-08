@@ -19,6 +19,14 @@ class Store {
 		this.language_code = language_code;
 	}
 
+	static fromJSON(json: object): Store {
+		//TODO
+		return Object.assign(
+			new Store("", "", "", "", ""),
+			JSON.parse(JSON.stringify(json))
+		);
+	}
+
 	public htmlDirAttribute(): string {
 		return this.language_code === "ar" ? "rtl" : "ltr";
 	}

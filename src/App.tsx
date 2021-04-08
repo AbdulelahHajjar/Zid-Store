@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "App.scss";
+import "./App.scss";
 
 import HomePage from "./Pages/HomePage/HomePage";
 import CartPage from "./Pages/CartPage";
@@ -16,18 +16,13 @@ import Cart from "Models/Cart";
 import MessageLine from "Components/MessageLine/MessageLine";
 
 function App() {
-	const [store, setStore] = useState<Store>(
-		Object.assign(new Store("", "", "", "", ""), data.store)
-	);
-	const [layout, setLayout] = useState<Layout>(
-		JSON.parse(JSON.stringify(data.layout))
-	);
-	const [cart, setCart] = useState<Cart>(
-		JSON.parse(JSON.stringify(data.cart))
-	);
+	const [store, setStore] = useState<Store>(Store.fromJSON(data.store));
+	const [layout, setLayout] = useState<Layout>(Layout.fromJSON(data.layout));
+	const [cart, setCart] = useState<Cart>(Cart.fromJSON(data.cart));
 
 	useEffect(() => {
 		document.title = store.name;
+		console.log(store);
 	}, [store]);
 
 	return (
@@ -36,9 +31,9 @@ function App() {
 				<StoreContext.Provider value={store}>
 					<div>
 						<Router>
-							{layout.messages.map((message) => {
+							{/* {layout.messages.map((message) => {
 								return <MessageLine message={message} />;
-							})}
+							})} */}
 							<NavigationBar />
 							<Route exact path="/" component={HomePage} />
 							<Route exact path="/cart" component={CartPage} />
