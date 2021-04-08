@@ -63,7 +63,6 @@ function NavigationBar() {
 			collapseOnSelect
 			expand="sm"
 			variant="light"
-			sticky="top"
 			className={styles.navigation_bar}
 		>
 			{brand()}

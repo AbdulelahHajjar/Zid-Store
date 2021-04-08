@@ -38,11 +38,14 @@ function App() {
 				<StoreContext.Provider value={store}>
 					<div>
 						<Router>
-							{/* {layout.messages.map((message) => {
-								return <MessageLine message={message} />;
-							})} */}
-							<NavigationBar />
-							<CategoriesBar />
+							<div className="complex_header_container">
+								{layout.messages.map((message) => {
+									return <MessageLine message={message} />;
+								})}
+								<NavigationBar />
+								<CategoriesBar />
+							</div>
+
 							<Route exact path="/" component={HomePage} />
 							<Route exact path="/cart" component={CartPage} />
 						</Router>

@@ -1,1 +1,10 @@
 @import "~bootstrap/scss/bootstrap";
+
+.complex_header_container {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    margin: 0;
+    padding: 0;
+    transform: translateY(-1px);
+}

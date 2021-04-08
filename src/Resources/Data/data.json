@@ -10,13 +10,8 @@
 		"messages": [
 			{
 				"text": "Welcome",
-				"text_color": "#000000",
-				"background_color": "#f8f8f8"
-			},
-			{
-				"text": "Just another message",
 				"text_color": "#ffffff",
-				"background_color": "black"
+				"background_color": "#673de6"
 			}
 		],
 		"logo": "https://dummyimage.com/75x75/000/fff",
