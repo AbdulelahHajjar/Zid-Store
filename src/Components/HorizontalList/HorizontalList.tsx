@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import styles from "./HorizontalList.module.scss";
 import ChevronLeft from "Resources/Images/chevron-left.png";
 
@@ -7,11 +7,25 @@ type HorizontalListPropTypes = {
 	rtl?: boolean;
 };
 
+function uuidv4() {
+	return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(
+		/[xy]/g,
+		function (c) {
+			var r = (Math.random() * 16) | 0,
+				v = c == "x" ? r : (r & 0x3) | 0x8;
+			return v.toString(16);
+		}
+	);
+}
+
 function HorizontalList({ children, rtl }: HorizontalListPropTypes) {
+	let listId = uuidv4();
+
 	const [mouseOver, setMouseOver] = useState(false);
 
 	const scroll = (change: number) => {
-		let element = document.getElementById("center")!;
+		console.log(styles.container);
+		let element = document.getElementById(listId)!;
 		let duration = 300;
 		var start = element.scrollLeft,
 			currentTime = 0,
@@ -48,7 +62,7 @@ function HorizontalList({ children, rtl }: HorizontalListPropTypes) {
 			onMouseEnter={() => setMouseOver(true)}
 			onMouseLeave={() => setMouseOver(false)}
 		>
-			<div className={styles.container} id="center">
+			<div className={styles.container} id={listId}>
 				{children}
 			</div>
 			<div className={styles.controls}>
@@ -90,3 +104,28 @@ function HorizontalList({ children, rtl }: HorizontalListPropTypes) {
 }
 
 export default HorizontalList;
+
+function getWindowDimensions() {
+	const { innerWidth: width, innerHeight: height } = window;
+	return {
+		width,
+		height,
+	};
+}
+
+export function useWindowDimensions() {
+	const [windowDimensions, setWindowDimensions] = useState(
+		getWindowDimensions()
+	);
+
+	useEffect(() => {
+		function handleResize() {
+			setWindowDimensions(getWindowDimensions());
+		}
+
+		window.addEventListener("resize", handleResize);
+		return () => window.removeEventListener("resize", handleResize);
+	}, []);
+
+	return windowDimensions;
+}

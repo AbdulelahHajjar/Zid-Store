@@ -1,5 +1,6 @@
 $accent-color: #777ff3;
-$site-color: #f1f5ff;
+$site-color: #f3f3f3;
+$primary-color: #434340;
 
 body {
 	background-color: $site-color;
@@ -15,6 +16,11 @@ body {
 	color: black;
 	font-size: 12pt;
     font-weight: 600;
+}
+
+.largeTitle {
+	font-size: 34pt;
+	color: $primary-color;
 }
 
 .subtitle {

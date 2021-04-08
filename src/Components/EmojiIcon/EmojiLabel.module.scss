@@ -1,0 +1,26 @@
+@use 'src/globals.scss';
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.emoji_container {
+    background-color: rgb(220, 220, 220);
+    display: inline-block;
+    width: 34pt;
+    height: 34pt;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25%;
+    margin-left: 20px;
+}
+
+.emoji {
+    font-size: 20pt;
+}
+
+.text {
+    @extend .largeTitle
+}

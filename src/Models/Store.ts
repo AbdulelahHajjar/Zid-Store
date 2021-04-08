@@ -1,8 +1,8 @@
 class Store {
 	id: string;
-	name: string;
+	name: string; //tab title
 	ssl: string;
-	currency: string;
+	currency: string; //product card
 	language_code: string;
 
 	constructor(

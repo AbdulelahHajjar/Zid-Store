@@ -1,3 +1,4 @@
+// above navigation bar
 class Message {
 	text: string;
 	text_color: string;
