@@ -1,9 +1,10 @@
 import IconButton from "Components/IconButton/IconButton";
 import LayoutContext from "Contexts/LayoutContext";
 import StoreContext from "Contexts/StoreContext";
-import React, { useContext } from "react";
-import { Button, FormControl, Nav, Navbar, NavDropdown } from "react-bootstrap";
-import storeLogo from "Resources/Images/store-logo.png";
+import { useContext } from "react";
+import { Button, Nav, Navbar } from "react-bootstrap";
+import { Link } from "react-router-dom";
+
 import styles from "./NavigationBar.module.scss";
 import cartIcon from "Resources/Images/cart.png";
 import CartContext from "Contexts/CartContext";
@@ -26,12 +27,24 @@ function NavigationBar() {
 			</Navbar.Brand>{" "}
 			<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 			<Navbar.Collapse id="responsive-navbar-nav">
-				<Nav className="mr-auto">
-					<IconButton
-						icon={cartIcon}
-						badgeNumber={cart.numItems()}
-						alt={`Shopping Cart (Number of Items: ${cart.numItems()})`}
-					/>
+				<Nav className={`mr-auto ${styles.actions_container}`}>
+					<Nav.Link>
+						{layout.navigation.actions.map((action) => {
+							return (
+								<Link to={{ pathname: action.value }}>
+									<Button>{action.text}</Button>
+								</Link>
+							);
+						})}
+					</Nav.Link>
+
+					<Nav.Link>
+						<IconButton
+							icon={cartIcon}
+							badgeNumber={cart.numItems()}
+							alt={`Shopping Cart (Number of Items: ${cart.numItems()})`}
+						/>
+					</Nav.Link>
 				</Nav>
 			</Navbar.Collapse>
 		</Navbar>

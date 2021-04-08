@@ -43,7 +43,7 @@
 				{
 					"type": "link",
 					"text": "Login",
-					"value": "http://localhost/login"
+					"value": "/login"
 				}
 			]
 		},
