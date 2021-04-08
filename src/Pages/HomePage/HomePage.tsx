@@ -5,7 +5,7 @@ import CoverImage from "Components/CoverImage/CoverImage";
 import LayoutContext from "Contexts/LayoutContext";
 import HorizontalList from "Components/HorizontalList/HorizontalList";
 import styles from "./HomePage.module.scss";
-import EmojiLabel from "Components/EmojiIcon/EmojiLabel";
+import EmojiLabel from "Components/EmojiLabel/EmojiLabel";
 
 function HomePage() {
 	const store = useContext(StoreContext);

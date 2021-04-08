@@ -10,7 +10,7 @@
 		"messages": [
 			{
 				"text": "Welcome",
-				"text_color": "#ffffff",
+				"text_color": "#000000",
 				"background_color": "#f8f8f8"
 			},
 			{

@@ -12,7 +12,10 @@ function EmojiLabel({ emoji, text }: EmojiLabelPropTypes) {
 			<div className={styles.emoji_container}>
 				<span className={styles.emoji}>{emoji}</span>
 			</div>
-			<span className={styles.text}>{text}</span>
+			<div className={styles.text_container}>
+				<div className={styles.text_highlight}></div>
+				<span className={styles.text}>{text}</span>
+			</div>
 		</div>
 	);
 }

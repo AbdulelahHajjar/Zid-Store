@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "App.scss";
 
 import HomePage from "./Pages/HomePage/HomePage";
@@ -13,6 +13,7 @@ import CartContext from "Contexts/CartContext";
 import Store from "Models/Store";
 import Layout from "Models/Layout";
 import Cart from "Models/Cart";
+import MessageLine from "Components/MessageLine/MessageLine";
 
 function App() {
 	const [store, setStore] = useState<Store>(
@@ -25,12 +26,19 @@ function App() {
 		JSON.parse(JSON.stringify(data.cart))
 	);
 
+	useEffect(() => {
+		document.title = store.name;
+	}, [store]);
+
 	return (
 		<CartContext.Provider value={cart}>
 			<LayoutContext.Provider value={layout}>
 				<StoreContext.Provider value={store}>
 					<div>
 						<Router>
+							{layout.messages.map((message) => {
+								return <MessageLine message={message} />;
+							})}
 							<NavigationBar />
 							<Route exact path="/" component={HomePage} />
 							<Route exact path="/cart" component={CartPage} />
