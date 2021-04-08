@@ -15,6 +15,7 @@ import Layout from "Models/Layout";
 import Cart from "Models/Cart";
 import MessageLine from "Components/MessageLine/MessageLine";
 import CategoriesBar from "Components/CategoriesBar/CategoriesBar";
+import { Container } from "react-bootstrap";
 
 /*
 	Notes to self:

@@ -1,8 +1,8 @@
 import IconButton from "Components/IconButton/IconButton";
 import LayoutContext from "Contexts/LayoutContext";
 import StoreContext from "Contexts/StoreContext";
-import { useContext } from "react";
-import { Button, Nav, Navbar } from "react-bootstrap";
+import React, { useContext } from "react";
+import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 import styles from "./NavigationBar.module.scss";
@@ -59,22 +59,26 @@ function NavigationBar() {
 	};
 
 	return (
-		<Navbar
-			collapseOnSelect
-			expand="sm"
-			variant="light"
-			className={styles.navigation_bar}
-		>
-			{brand()}
+		<React.Fragment>
+			<Navbar
+				collapseOnSelect
+				expand="sm"
+				variant="light"
+				className={styles.navigation_bar}
+			>
+				{brand()}
 
-			<Navbar.Toggle aria-controls="responsive-navbar-nav" />
-			<Navbar.Collapse id="responsive-navbar-nav">
-				<Nav className={`mr-auto ${styles.actions_container}`}>
-					{actions()}
-					{shoppingCart()}
-				</Nav>
-			</Navbar.Collapse>
-		</Navbar>
+				<div className={styles.store_name}>{store.name}</div>
+
+				<Navbar.Toggle aria-controls="responsive-navbar-nav" />
+				<Navbar.Collapse id="responsive-navbar-nav">
+					<Nav className={`mr-auto ${styles.actions_container}`}>
+						{actions()}
+						{shoppingCart()}
+					</Nav>
+				</Navbar.Collapse>
+			</Navbar>
+		</React.Fragment>
 	);
 }
 

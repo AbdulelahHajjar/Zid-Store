@@ -16,4 +16,17 @@
 	border-bottom: 1pt solid $light;
 	width: 100%;
 	background-color: white;
+	position: relative;
+	padding: 8px 64px;
+    box-sizing: border-box;
+
+}
+
+.store_name {
+	@extend .largeTitle;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	left: 0;
+	right: 0;
 }
