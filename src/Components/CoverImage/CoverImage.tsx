@@ -6,11 +6,7 @@ type CoverImageProps = {
 };
 
 function CoverImage({ imageUrl }: CoverImageProps) {
-	return (
-		<div className={styles.container}>
-			<img className={styles.image} src={imageUrl} alt="Store Cover" />
-		</div>
-	);
+	return <img className={styles.image} src={imageUrl} alt="Store Cover" />;
 }
 
 export default CoverImage;
