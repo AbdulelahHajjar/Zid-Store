@@ -68,7 +68,11 @@ function NavigationBar() {
 			>
 				{brand()}
 
-				<div className={styles.store_name}>{store.name}</div>
+				<div className={styles.link_wrapper}>
+					<Link to="/">
+						<span className={styles.store_name}>{store.name}</span>
+					</Link>
+				</div>
 
 				<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 				<Navbar.Collapse id="responsive-navbar-nav">

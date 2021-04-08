@@ -18,15 +18,20 @@
 	background-color: white;
 	position: relative;
 	padding: 8px 64px;
-    box-sizing: border-box;
-
 }
 
 .store_name {
 	@extend .largeTitle;
+}
+
+.link_wrapper {
 	position: absolute;
-	text-align: center;
+	display: flex;
 	width: 100%;
-	left: 0;
+	height: 0;
+	background: red;
+	justify-content: center;
+	align-items: center;
 	right: 0;
+	left: 0;
 }
