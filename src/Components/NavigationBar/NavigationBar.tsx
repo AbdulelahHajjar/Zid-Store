@@ -59,7 +59,7 @@ function NavigationBar() {
 	};
 
 	return (
-		<React.Fragment>
+		<div className={styles.container}>
 			<Navbar
 				collapseOnSelect
 				expand="sm"
@@ -67,12 +67,6 @@ function NavigationBar() {
 				className={styles.navigation_bar}
 			>
 				{brand()}
-
-				<div className={styles.link_wrapper}>
-					<Link to="/">
-						<span className={styles.store_name}>{store.name}</span>
-					</Link>
-				</div>
 
 				<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 				<Navbar.Collapse id="responsive-navbar-nav">
@@ -82,7 +76,10 @@ function NavigationBar() {
 					</Nav>
 				</Navbar.Collapse>
 			</Navbar>
-		</React.Fragment>
+			<Link className={styles.store_name} to="/">
+				<p>{store.name}</p>
+			</Link>
+		</div>
 	);
 }
 
