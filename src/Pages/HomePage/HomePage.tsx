@@ -34,7 +34,7 @@ function HomePage() {
 					<div className={styles.emoji_label_wrapper}>
 						<EmojiLabel emoji="🔥" text="المنتجات الشائعة" />
 					</div>
-					<HorizontalList rtl>{hotProducts()}</HorizontalList>
+					{hotProducts()}
 				</div>
 
 				<div className={styles.section}>

@@ -10,7 +10,10 @@ type ProductCardViewProps = {
 function ProductCardView({ product }: ProductCardViewProps) {
 	return (
 		<div style={{ display: "inline-block" }}>
-			<Link className={`${styles.container} link`} to={"/product"}>
+			<Link
+				className={`${styles.container} link`}
+				to={{ pathname: `/product/${product.id}`, state: product }}
+			>
 				<div>
 					<img
 						className={styles.image}
