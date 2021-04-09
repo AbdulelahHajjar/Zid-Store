@@ -28,14 +28,17 @@ export function CartContextProvider({ children }) {
 			return Result.error(CartError.invalidQuantity);
 		}
 
+		let productIndexInCart = findProductIndex(product.id);
 		if (
 			quantity > product.quantity ||
-			quantity + cart.items[product.id] > product.quantity
+			(productIndexInCart !== null &&
+				productIndexInCart !== undefined &&
+				quantity + cart.items[productIndexInCart].quantity >
+					product.quantity)
 		) {
 			return Result.error(CartError.quantityExceedsStock);
 		}
 
-		let productIndexInCart = findProductIndex(product.id);
 		let newItems = cart.items;
 
 		if (productIndexInCart !== null && productIndexInCart !== undefined) {
@@ -43,6 +46,8 @@ export function CartContextProvider({ children }) {
 		} else {
 			newItems.push({ product, quantity: 1 });
 		}
+
+		console.log(newItems);
 
 		setCart((prevState) => ({
 			...prevState,
