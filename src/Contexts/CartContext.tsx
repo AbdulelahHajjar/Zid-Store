@@ -24,7 +24,7 @@ export function CartContextProvider({ children }) {
 	const [cart, setCart] = useState(Cart.fromJSON(data.cart));
 
 	function addProduct(product, quantity): Result<CartError, never> {
-		if (quantity <= 0) {
+		if (quantity <= product.minimum) {
 			return Result.error(CartError.invalidQuantity);
 		}
 
