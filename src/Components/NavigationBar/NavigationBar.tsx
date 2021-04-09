@@ -1,19 +1,18 @@
 import IconButton from "Components/IconButton/IconButton";
 import LayoutContext from "Contexts/LayoutContext";
 import StoreContext from "Contexts/StoreContext";
-import React, { useContext } from "react";
-import { Button, Container, Nav, Navbar } from "react-bootstrap";
+import { useContext } from "react";
+import { Button, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 import styles from "./NavigationBar.module.scss";
 import cartIcon from "Resources/Images/cart.png";
-import CartContext from "Contexts/CartContext";
-import CategoriesBar from "Components/CategoriesBar/CategoriesBar";
+import CartContext, { CartContextType } from "Contexts/CartContext";
 
 function NavigationBar() {
 	const layout = useContext(LayoutContext);
 	const store = useContext(StoreContext);
-	const cart = useContext(CartContext);
+	const { cart } = useContext(CartContext);
 
 	const brand = () => {
 		return (
@@ -50,8 +49,8 @@ function NavigationBar() {
 				<Link to={"/cart"}>
 					<IconButton
 						icon={cartIcon}
-						badgeNumber={cart.numItems()}
-						alt={`Shopping Cart (Number of Items: ${cart.numItems()})`}
+						badgeNumber={cart?.numItems()}
+						alt={`Shopping Cart (Number of Items: ${cart?.numItems()})`}
 					/>
 				</Link>
 			</Nav.Item>

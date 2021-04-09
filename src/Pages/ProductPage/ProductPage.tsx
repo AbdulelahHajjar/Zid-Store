@@ -3,11 +3,13 @@ import styles from "./ProductPage.module.scss";
 import { useParams, useHistory } from "react-router-dom";
 import LayoutContext from "Contexts/LayoutContext";
 import Product from "Models/Product";
+import CartContext from "Contexts/CartContext";
 
 function ProductPage(props) {
 	let { id } = useParams();
 
 	const layout = useContext(LayoutContext);
+	const cartContext = useContext(CartContext);
 	const [product, setProduct] = useState<Product | null>(null);
 
 	useEffect(() => {
@@ -51,9 +53,23 @@ function ProductPage(props) {
 		return <p>Not Found.</p>;
 	};
 
+	const addToCart = () => {
+		if (!product) return;
+
+		cartContext?.addProduct(product);
+	};
+
 	return (
 		<React.Fragment>
 			{product ? productDetails() : notFound()}
+			<input type="text" name="" id="" />
+			<button
+				onClick={() => {
+					addToCart();
+				}}
+			>
+				Add to Cart
+			</button>
 		</React.Fragment>
 	);
 }

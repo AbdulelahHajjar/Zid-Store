@@ -8,7 +8,7 @@ import NavigationBar from "./Components/NavigationBar/NavigationBar";
 import StoreContext from "Contexts/StoreContext";
 import data from "Resources/Data/data.json";
 import LayoutContext from "Contexts/LayoutContext";
-import CartContext from "Contexts/CartContext";
+import { CartContextProvider } from "Contexts/CartContext";
 
 import Store from "Models/Store";
 import Layout from "Models/Layout";
@@ -34,7 +34,7 @@ function App() {
 	}, [store]);
 
 	return (
-		<CartContext.Provider value={cart}>
+		<CartContextProvider>
 			<LayoutContext.Provider value={layout}>
 				<StoreContext.Provider value={store}>
 					<div>
@@ -62,7 +62,7 @@ function App() {
 					</div>
 				</StoreContext.Provider>
 			</LayoutContext.Provider>
-		</CartContext.Provider>
+		</CartContextProvider>
 	);
 }
 
