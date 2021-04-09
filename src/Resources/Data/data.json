@@ -3,7 +3,7 @@
         "id": "09806ce7-02fd-4a8c-b59b-cbaeeaab0e49",
         "name": "متجر زد",
         "ssl": "https://localhost/",
-        "currency": "SAR",
+        "currency": "ر.س.",
         "language_code": "ar"
     },
 	"layout": {

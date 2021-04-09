@@ -42,6 +42,13 @@ class Product {
 		this.name = name;
 		this.description = description;
 	}
+
+	public discountPercentage(): number | null {
+		if (this.old_price == null || this.old_price === 0) return null;
+		return Math.round(
+			((this.old_price - this.price) / this.old_price) * 100
+		);
+	}
 }
 
 export default Product;

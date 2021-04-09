@@ -1,0 +1,30 @@
+@import "src/globals.scss";
+
+.product_details_row {
+    display: flex;
+}
+
+.product_image_column {
+}
+
+.product_image {
+    width: 100%;
+    border-radius: 10%;
+}
+
+.product_name {
+    @extend .largeTitle
+}
+
+.product_details_column {
+    max-height: 50px;
+}
+
+.product_price {
+    @extend .title;
+    color: $accent-color;
+}
+
+.product_old_price {
+    @extend .old_price;
+}
