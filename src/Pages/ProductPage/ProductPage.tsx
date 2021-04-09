@@ -36,7 +36,7 @@ function ProductPage(props) {
 				<p>{product.id}</p>
 				<p>{product.model}</p>
 				<p>{product.sku}</p>
-				<p>{product.quantity}</p>
+				<p>{product.quantity} avail</p>
 				<p>{product.stock_status}</p>
 				<p>{product.image}</p>
 				<p>{product.price}</p>
@@ -56,7 +56,7 @@ function ProductPage(props) {
 	const addToCart = () => {
 		if (!product) return;
 
-		cartContext?.addProduct(product);
+		cartContext?.addProduct(product, 1);
 	};
 
 	return (

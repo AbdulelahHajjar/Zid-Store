@@ -1,9 +1,12 @@
 import Product from "./Product";
+interface QuantifiedProduct {
+	product: Product;
+	quantity: number;
+}
+export default class Cart {
+	items: QuantifiedProduct[];
 
-class Cart {
-	items: Product[];
-
-	constructor(items: Product[]) {
+	constructor(items: QuantifiedProduct[]) {
 		this.items = items;
 	}
 
@@ -11,10 +14,10 @@ class Cart {
 		//TODO
 		return Object.assign(new Cart([]), JSON.parse(JSON.stringify(json)));
 	}
-
-	public numItems(): number {
-		return this.items.length;
-	}
 }
-
-export default Cart;
+export enum CartError {
+	invalidQuantity,
+	unavailableProduct, //TODO
+	quantityExceedsStock,
+	noContextProvider,
+}
