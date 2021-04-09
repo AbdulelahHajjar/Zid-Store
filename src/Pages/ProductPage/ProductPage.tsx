@@ -7,6 +7,7 @@ import CartContext from "Contexts/CartContext";
 import { Col, Container, Row } from "react-bootstrap";
 import Spacer from "Components/Spacer/Spacer";
 import StoreContext from "Contexts/StoreContext";
+import NumberStepper from "Components/NumberStepper/NumberStepper";
 
 function ProductPage(props) {
 	let { id } = useParams();
@@ -16,6 +17,7 @@ function ProductPage(props) {
 	const store = useContext(StoreContext);
 
 	const [product, setProduct] = useState<Product | null>(null);
+	const [quantity, setQuantity] = useState<number>(product?.minimum ?? 1);
 
 	useEffect(() => {
 		if (!id || id.trim() === "") return;
@@ -72,6 +74,11 @@ function ProductPage(props) {
 							}}
 							style={{ height: "200px", overflow: "scroll" }}
 						></div>
+						<NumberStepper
+							min={product.minimum}
+							max={product.quantity}
+							onUpdate={(value) => setQuantity(value)}
+						/>
 					</Col>
 					<Col lg={2} md={1} />
 				</Row>
