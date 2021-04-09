@@ -1,7 +1,7 @@
 {
 	"store": {
         "id": "09806ce7-02fd-4a8c-b59b-cbaeeaab0e49",
-        "name": "Best Store",
+        "name": "متجر زد",
         "ssl": "https://localhost/",
         "currency": "SAR",
         "language_code": "ar"
@@ -9,9 +9,9 @@
 	"layout": {
 		"messages": [
 			{
-				"text": "Welcome",
+				"text": "أهلا وسهلا بكم في متجر زد! 🚀",
 				"text_color": "#ffffff",
-				"background_color": "#673de6"
+				"background_color": "#339696"
 			}
 		],
 		"logo": "https://dummyimage.com/75x75/000/fff",
