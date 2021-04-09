@@ -15,7 +15,7 @@ import Layout from "Models/Layout";
 import Cart from "Models/Cart";
 import MessageLine from "Components/MessageLine/MessageLine";
 import CategoriesBar from "Components/CategoriesBar/CategoriesBar";
-import { Container } from "react-bootstrap";
+import ProductPage from "Pages/ProductPage/ProductPage";
 
 /*
 	Notes to self:
@@ -40,8 +40,13 @@ function App() {
 					<div>
 						<Router>
 							<div className="complex_header_container">
-								{layout.messages.map((message) => {
-									return <MessageLine message={message} />;
+								{layout.messages.map((message, index) => {
+									return (
+										<MessageLine
+											message={message}
+											key={index}
+										/>
+									);
 								})}
 								<NavigationBar />
 								<CategoriesBar />
@@ -49,6 +54,10 @@ function App() {
 
 							<Route exact path="/" component={HomePage} />
 							<Route exact path="/cart" component={CartPage} />
+							<Route
+								path="/product/:id"
+								component={ProductPage}
+							/>
 						</Router>
 					</div>
 				</StoreContext.Provider>

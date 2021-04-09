@@ -12,7 +12,10 @@ function ProductCardView({ product }: ProductCardViewProps) {
 		<div style={{ display: "inline-block" }}>
 			<Link
 				className={`${styles.container} link`}
-				to={{ pathname: `/product/${product.id}`, state: product }}
+				to={{
+					pathname: `/product/${product.id}`,
+					state: { product },
+				}}
 			>
 				<div>
 					<img

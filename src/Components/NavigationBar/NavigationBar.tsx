@@ -32,21 +32,21 @@ function NavigationBar() {
 
 	const actions = () => {
 		return (
-			<Nav.Link>
-				{layout.navigation.actions.map((action) => {
+			<Nav.Item>
+				{layout.navigation.actions.map((action, index) => {
 					return (
-						<Link to={{ pathname: action.value }}>
+						<Link to={{ pathname: action.value }} key={index}>
 							<Button>{action.text}</Button>
 						</Link>
 					);
 				})}
-			</Nav.Link>
+			</Nav.Item>
 		);
 	};
 
 	const shoppingCart = () => {
 		return (
-			<Nav.Link>
+			<Nav.Item>
 				<Link to={"/cart"}>
 					<IconButton
 						icon={cartIcon}
@@ -54,7 +54,7 @@ function NavigationBar() {
 						alt={`Shopping Cart (Number of Items: ${cart.numItems()})`}
 					/>
 				</Link>
-			</Nav.Link>
+			</Nav.Item>
 		);
 	};
 

@@ -9,8 +9,12 @@ function CategoriesBar() {
 	const categories = () => {
 		return layout.navigation.categories.map((category, index) => {
 			return (
-				<Nav.Item as="li">
-					<Nav.Link className={styles.category} href={category.link}>
+				<Nav.Item as="li" key={index}>
+					<Nav.Link
+						className={styles.category}
+						href={category.link}
+						key={index}
+					>
 						{category.name}
 					</Nav.Link>
 				</Nav.Item>
