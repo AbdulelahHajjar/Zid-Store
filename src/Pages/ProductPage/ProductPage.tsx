@@ -27,7 +27,35 @@ function ProductPage(props) {
 		setProduct(fetchedProduct);
 	}, [layout.body, id, props.location.state?.product]);
 
-	return <div>{product?.name}</div>;
+	const productDetails = () => {
+		if (!product) return;
+		return (
+			<div>
+				<p>{product.id}</p>
+				<p>{product.model}</p>
+				<p>{product.sku}</p>
+				<p>{product.quantity}</p>
+				<p>{product.stock_status}</p>
+				<p>{product.image}</p>
+				<p>{product.price}</p>
+				<p>{product.old_price}</p>
+				<p>{product.minimum}</p>
+				<p>{product.share_link}</p>
+				<p>{product.name}</p>
+				<p>{product.description}</p>
+			</div>
+		);
+	};
+
+	const notFound = () => {
+		return <p>Not Found.</p>;
+	};
+
+	return (
+		<React.Fragment>
+			{product ? productDetails() : notFound()}
+		</React.Fragment>
+	);
 }
 
 export default ProductPage;
