@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import styles from "./ProductPage.module.scss";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import LayoutContext from "Contexts/LayoutContext";
 import Product from "Models/Product";
 import CartContext from "Contexts/CartContext";

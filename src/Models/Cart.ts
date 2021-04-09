@@ -1,5 +1,5 @@
 import Product from "./Product";
-interface QuantifiedProduct {
+export interface QuantifiedProduct {
 	product: Product;
 	quantity: number;
 }

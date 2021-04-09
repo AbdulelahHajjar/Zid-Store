@@ -1,4 +1,4 @@
-import Cart, { CartError } from "Models/Cart";
+import Cart, { CartError, QuantifiedProduct } from "Models/Cart";
 import Product from "Models/Product";
 import React, { useEffect, useRef, useState } from "react";
 import data from "Resources/Data/data.json";
@@ -10,6 +10,7 @@ export type CartContextType = {
 		product: Product,
 		quantity: number
 	) => Result<CartError, never>;
+	deleteProduct: (productId: number) => void;
 	numItems: () => number | null;
 };
 
@@ -17,6 +18,7 @@ const CartContext = React.createContext<CartContextType>({
 	cart: null,
 	addProduct: (product, quantity) =>
 		Result.error(CartError.noContextProvider),
+	deleteProduct: (productId) => console.warn(CartError.noContextProvider),
 	numItems: () => null,
 });
 
@@ -46,15 +48,24 @@ export function CartContextProvider({ children }) {
 		} else {
 			newItems.push({ product, quantity: 1 });
 		}
+		setItems(newItems);
+		return Result.ok();
+	}
 
-		console.log(newItems);
+	function deleteProduct(productId) {
+		let index = findProductIndex(productId);
+		if (index === null || index === undefined) return;
 
+		let newItems = cart.items;
+		delete newItems[index];
+		setItems(newItems);
+	}
+
+	function setItems(items: QuantifiedProduct[]) {
 		setCart((prevState) => ({
 			...prevState,
-			items: newItems,
+			items: items,
 		}));
-
-		return Result.ok();
 	}
 
 	function findProductIndex(productId: number): number | null {
@@ -79,6 +90,7 @@ export function CartContextProvider({ children }) {
 	const defaultValue = {
 		cart,
 		addProduct,
+		deleteProduct,
 		numItems,
 	};
 
