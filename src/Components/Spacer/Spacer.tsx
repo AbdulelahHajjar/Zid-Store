@@ -1,6 +1,6 @@
 type SpacerPropTypes = {
-	height?: number;
-	width?: number;
+	height?: string;
+	width?: string;
 };
 
 function Spacer({ width, height }: SpacerPropTypes) {
@@ -8,8 +8,8 @@ function Spacer({ width, height }: SpacerPropTypes) {
 		<div
 			style={{
 				display: "block",
-				width: width ?? 0,
-				height: height ?? 0,
+				width: width ?? "0",
+				height: height ?? "0",
 			}}
 		></div>
 	);

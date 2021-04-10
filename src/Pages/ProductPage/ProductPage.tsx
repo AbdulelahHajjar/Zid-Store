@@ -41,7 +41,7 @@ function ProductPage(props) {
 		return (
 			<Container fluid>
 				<Row>
-					<Spacer height={72} />
+					<Spacer height={"72px"} />
 				</Row>
 				<Row className={styles.product_details_row}>
 					<Col lg={2} md={1} />
@@ -80,7 +80,7 @@ function ProductPage(props) {
 							}}
 							style={{ height: "200px", overflow: "scroll" }}
 						></div>
-						<Spacer height={20} />
+						<Spacer height={"20px"} />
 						<div className={styles.product_actions}>
 							<NumberStepper
 								min={product.minimum}

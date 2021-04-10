@@ -1,6 +1,11 @@
 import styles from "./Button.module.scss";
 
-function Button({ children, onClick }) {
+type ButtonPropTypes = {
+	children;
+	onClick?: () => void;
+};
+
+function Button({ children, onClick }: ButtonPropTypes) {
 	return (
 		<button onClick={onClick} className={styles.container}>
 			{children}

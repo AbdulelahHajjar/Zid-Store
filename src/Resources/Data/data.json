@@ -37,7 +37,7 @@
 			"actions": [
 				{
 					"type": "link",
-					"text": "Login",
+					"text": "تسجيل الدخول",
 					"value": "/login"
 				}
 			]
