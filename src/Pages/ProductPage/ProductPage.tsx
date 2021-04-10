@@ -8,6 +8,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import Spacer from "Components/Spacer/Spacer";
 import StoreContext from "Contexts/StoreContext";
 import NumberStepper from "Components/NumberStepper/NumberStepper";
+import Button from "Components/Button/Button";
 
 function ProductPage(props) {
 	let { id } = useParams();
@@ -37,7 +38,6 @@ function ProductPage(props) {
 
 	const productDetails = () => {
 		if (!product) return;
-		console.log(product);
 		return (
 			<Container fluid>
 				<Row>
@@ -57,28 +57,44 @@ function ProductPage(props) {
 						md={6}
 						className={styles.product_details_column}
 					>
-						<p className={styles.product_name}> {product.name} </p>
+						<div className={styles.product_name}>
+							{" "}
+							{product.name}{" "}
+						</div>
 						{product.old_price && (
-							<p className={styles.old_price}>
+							<div className={styles.old_price}>
 								{product.old_price} {store.currency}
-							</p>
+							</div>
 						)}
 
-						<p className={styles.product_price}>
+						<div className={styles.product_price}>
 							{product.price} {store.currency}
-							discount%
-						</p>
+						</div>
+
+						<div className={styles.stock_availability}>
+							{product.quantity > 0 ? "متوفر" : "غير متوفر"}
+						</div>
 						<div
 							dangerouslySetInnerHTML={{
 								__html: product.description,
 							}}
 							style={{ height: "200px", overflow: "scroll" }}
 						></div>
-						<NumberStepper
-							min={product.minimum}
-							max={product.quantity}
-							onUpdate={(value) => setQuantity(value)}
-						/>
+						<Spacer height={20} />
+						<div className={styles.product_actions}>
+							<NumberStepper
+								min={product.minimum}
+								max={product.quantity}
+								onUpdate={(value) => setQuantity(value)}
+							/>
+							<Button onClick={() => addToCart()}>
+								أضف للسلة
+							</Button>
+							<div className={styles.product_footer}>
+								<div>رقم المنتج: {product.sku}</div>
+								<div>آخر تحديث: {product.updated_at.date}</div>
+							</div>
+						</div>
 					</Col>
 					<Col lg={2} md={1} />
 				</Row>
@@ -92,8 +108,7 @@ function ProductPage(props) {
 
 	const addToCart = () => {
 		if (!product) return;
-
-		cartContext?.addProduct(product, 1);
+		cartContext?.addProduct(product, quantity);
 	};
 
 	return (

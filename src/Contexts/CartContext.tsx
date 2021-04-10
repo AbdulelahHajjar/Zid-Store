@@ -26,7 +26,7 @@ export function CartContextProvider({ children }) {
 	const [cart, setCart] = useState(Cart.fromJSON(data.cart));
 
 	function addProduct(product, quantity): Result<CartError, never> {
-		if (quantity <= product.minimum) {
+		if (quantity < product.minimum) {
 			return Result.error(CartError.invalidQuantity);
 		}
 
@@ -49,6 +49,7 @@ export function CartContextProvider({ children }) {
 			newItems.push({ product, quantity: 1 });
 		}
 		setItems(newItems);
+		console.log(numItems());
 		return Result.ok();
 	}
 
@@ -84,7 +85,11 @@ export function CartContextProvider({ children }) {
 	}
 
 	function numItems() {
-		return cart.items.length;
+		return cart.items
+			.map((element) => {
+				return element.quantity;
+			})
+			.reduce((a, b) => a + b, 0);
 	}
 
 	const defaultValue = {

@@ -1,0 +1,19 @@
+@import 'src/globals.scss';
+
+.container {
+    border: none;
+    outline: none;
+    background-color: $accent-color;
+    padding: 8px 16px;
+    color: $light;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.container:hover {
+    background-color: lighten($accent-color, 10%);
+}
+
+.container:active {
+    background-color: lighten($accent-color, 5%);
+}

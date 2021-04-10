@@ -1,3 +1,5 @@
+import { Timestamp } from "./Timestamp";
+
 class Product {
 	id: number;
 	model: string;
@@ -9,7 +11,7 @@ class Product {
 	old_price: number | null;
 	minimum: number;
 	share_link: string;
-	updated_at: Object;
+	updated_at: Timestamp;
 	name: string;
 	description: string;
 
@@ -23,7 +25,7 @@ class Product {
 		price: number,
 		minimum: number,
 		share_link: string,
-		updated_at: Object,
+		updated_at: Timestamp,
 		name: string,
 		description: string,
 		old_price: number
