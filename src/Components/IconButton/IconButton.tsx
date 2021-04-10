@@ -6,8 +6,15 @@ type IconButtonPropTypes = {
 	badgeNumber?: number;
 	showZero?: boolean;
 	alt?: string;
+	onClick?: () => void;
 };
-function IconButton({ icon, badgeNumber, showZero, alt }: IconButtonPropTypes) {
+function IconButton({
+	icon,
+	badgeNumber,
+	showZero,
+	alt,
+	onClick,
+}: IconButtonPropTypes) {
 	const button = () => {
 		return (
 			<button className={styles.button}>
@@ -24,10 +31,10 @@ function IconButton({ icon, badgeNumber, showZero, alt }: IconButtonPropTypes) {
 		);
 	};
 	return (
-		<div className={styles.container}>
+		<button onClick={onClick} className={styles.container}>
 			{button()}
 			{badgeNumber != null && (badgeNumber !== 0 || showZero) && badge()}
-		</div>
+		</button>
 	);
 }
 

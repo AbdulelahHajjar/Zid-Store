@@ -1,19 +1,21 @@
 import IconButton from "Components/IconButton/IconButton";
 import LayoutContext from "Contexts/LayoutContext";
 import StoreContext from "Contexts/StoreContext";
-import { useContext } from "react";
-import { Nav, Navbar } from "react-bootstrap";
+import { useContext, useState } from "react";
+import { Modal, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Button from "Components/Button/Button";
+import Button from "Components/Button/CustomButton";
 import styles from "./NavigationBar.module.scss";
 import cartIcon from "Resources/Images/cart.png";
 import CartContext from "Contexts/CartContext";
 import logo from "Resources/Images/logo.png";
+import CartModal from "Pages/CartModal/CartModal";
 
 function NavigationBar() {
 	const layout = useContext(LayoutContext);
 	const store = useContext(StoreContext);
 	const { cart, numItems } = useContext(CartContext);
+	const [showCart, setShowCart] = useState(false);
 
 	const brand = () => {
 		return (
@@ -47,13 +49,12 @@ function NavigationBar() {
 	const shoppingCart = () => {
 		return (
 			<Nav.Item>
-				<Link to={"/cart"}>
-					<IconButton
-						icon={cartIcon}
-						badgeNumber={numItems()!} //TODO
-						alt={`Shopping Cart (Number of Items: ${numItems()!})`} //TODO
-					/>
-				</Link>
+				<IconButton
+					icon={cartIcon}
+					badgeNumber={numItems()!} //TODO
+					alt={`Shopping Cart (Number of Items: ${numItems()!})`} //TODO
+					onClick={() => setShowCart(true)}
+				/>
 			</Nav.Item>
 		);
 	};
@@ -78,6 +79,21 @@ function NavigationBar() {
 			<Link className={styles.store_name} to="/">
 				<p>{store.name}</p>
 			</Link>
+			<Modal
+				size="lg"
+				show={showCart}
+				onHide={() => setShowCart(false)}
+				aria-labelledby="example-modal-sizes-title-lg"
+			>
+				<Modal.Header closeButton>
+					<Modal.Title id="example-modal-sizes-title-lg">
+						السلة
+					</Modal.Title>
+				</Modal.Header>
+				<Modal.Body>
+					<CartModal />
+				</Modal.Body>
+			</Modal>
 		</div>
 	);
 }

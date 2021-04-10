@@ -8,7 +8,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import Spacer from "Components/Spacer/Spacer";
 import StoreContext from "Contexts/StoreContext";
 import NumberStepper from "Components/NumberStepper/NumberStepper";
-import Button from "Components/Button/Button";
+import Button from "Components/Button/CustomButton";
 
 function ProductPage(props) {
 	let { id } = useParams();

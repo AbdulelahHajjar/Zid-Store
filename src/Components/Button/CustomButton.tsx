@@ -1,11 +1,11 @@
-import styles from "./Button.module.scss";
+import styles from "./CustomButton.module.scss";
 
 type ButtonPropTypes = {
 	children;
 	onClick?: () => void;
 };
 
-function Button({ children, onClick }: ButtonPropTypes) {
+function CustomButton({ children, onClick }: ButtonPropTypes) {
 	return (
 		<button onClick={onClick} className={styles.container}>
 			{children}
@@ -13,4 +13,4 @@ function Button({ children, onClick }: ButtonPropTypes) {
 	);
 }
 
-export default Button;
+export default CustomButton;
