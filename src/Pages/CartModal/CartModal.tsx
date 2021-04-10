@@ -1,10 +1,13 @@
+import CustomButton from "Components/Button/CustomButton";
 import ProductCell from "Components/ProductCell/ProductCell";
 import CartContext from "Contexts/CartContext";
+import StoreContext from "Contexts/StoreContext";
 import React, { useContext } from "react";
 import styles from "./CartModal.module.scss";
 
 function CartModal() {
-	const { cart } = useContext(CartContext);
+	const { cart, totalPrice } = useContext(CartContext);
+	const store = useContext(StoreContext);
 
 	const productsList = () => {
 		return (
@@ -17,6 +20,13 @@ function CartModal() {
 						/>
 					);
 				})}
+
+				<div className={styles.summary_container}>
+					<span className={styles.summary}>
+						المجموع: {totalPrice()} {store.currency}
+					</span>
+					<CustomButton>إتمام الدفع</CustomButton>
+				</div>
 			</React.Fragment>
 		);
 	};

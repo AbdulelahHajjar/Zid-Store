@@ -12,6 +12,7 @@ export type CartContextType = {
 	) => Result<CartError, never>;
 	deleteProduct: (productId: number) => void;
 	numItems: () => number | null;
+	totalPrice: () => number | null;
 };
 
 const CartContext = React.createContext<CartContextType>({
@@ -20,6 +21,7 @@ const CartContext = React.createContext<CartContextType>({
 		Result.error(CartError.noContextProvider),
 	deleteProduct: (productId) => console.warn(CartError.noContextProvider),
 	numItems: () => null,
+	totalPrice: () => null,
 });
 
 export function CartContextProvider({ children }) {
@@ -92,11 +94,20 @@ export function CartContextProvider({ children }) {
 			.reduce((a, b) => a + b, 0);
 	}
 
+	function totalPrice() {
+		return cart.items
+			.map((element) => {
+				return element.product.price;
+			})
+			.reduce((a, b) => a + b, 0);
+	}
+
 	const defaultValue = {
 		cart,
 		addProduct,
 		deleteProduct,
 		numItems,
+		totalPrice,
 	};
 
 	return (
