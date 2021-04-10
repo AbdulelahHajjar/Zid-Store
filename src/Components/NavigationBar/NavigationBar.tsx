@@ -8,6 +8,7 @@ import Button from "Components/Button/Button";
 import styles from "./NavigationBar.module.scss";
 import cartIcon from "Resources/Images/cart.png";
 import CartContext from "Contexts/CartContext";
+import logo from "Resources/Images/logo.png";
 
 function NavigationBar() {
 	const layout = useContext(LayoutContext);

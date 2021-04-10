@@ -9,7 +9,7 @@ $background-color: white;
 .badge_container {
     position: absolute;
     display: flex;
-    background-color: rgb(255, 0, 60);
+    background-color: $accent-color;
     width: 20px;
     height: 20px;
     justify-content: center;

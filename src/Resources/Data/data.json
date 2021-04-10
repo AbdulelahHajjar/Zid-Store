@@ -18,20 +18,20 @@
 		"navigation": {
 			"categories": [
 				{
-					"name": "Cat 1",
-					"link": "/cat-1"
+					"name": "📱 جوالات",
+					"link": "/mobiles"
 				},
 				{
-					"name": "Cat 2",
-					"link": "/cat-2"
+					"name": "⌨️ كيبوردات",
+					"link": "/keyboards"
 				},
 				{
-					"name": "Category 3",
-					"link": "/category-3"
+					"name": "🖥 شاشات",
+					"link": "/monitors"
 				},
 				{
-					"name": "Cat 4",
-					"link": "/cat-4"
+					"name": "🪣 سطول",
+					"link": "/buckets"
 				}
 			],
 			"actions": [
