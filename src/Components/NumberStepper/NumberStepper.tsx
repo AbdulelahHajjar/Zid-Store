@@ -18,7 +18,9 @@ function NumberStepper({
 
 	useEffect(() => {
 		onUpdate(value);
-	});
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
+
 	const increment = () => {
 		if (max != null && value + 1 > max) return;
 		onUpdate(value + 1);

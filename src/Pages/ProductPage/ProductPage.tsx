@@ -35,6 +35,24 @@ function ProductPage(props) {
 		setProduct(fetchedProduct);
 	}, [layout.body, id, props.location.state?.product]);
 
+	const productActions = () => {
+		if (!product) return;
+		return (
+			<div className={styles.product_actions}>
+				<NumberStepper
+					min={product.minimum}
+					max={product.quantity}
+					onUpdate={(value) => setQuantity(value)}
+				/>
+				<Button onClick={() => addToCart()}>أضف للسلة</Button>
+				<div className={styles.product_footer}>
+					<div>رقم المنتج: {product.sku}</div>
+					<div>آخر تحديث: {product.updated_at.date}</div>
+				</div>
+			</div>
+		);
+	};
+
 	const productDetails = () => {
 		if (!product) return;
 		return (
@@ -57,8 +75,7 @@ function ProductPage(props) {
 						className={styles.product_details_column}
 					>
 						<div className={styles.product_name}>
-							{" "}
-							{product.name}{" "}
+							{product.name}
 						</div>
 						{product.old_price && (
 							<div className={styles.old_price}>
@@ -80,20 +97,7 @@ function ProductPage(props) {
 							style={{ height: "200px", overflow: "scroll" }}
 						></div>
 						<Spacer height={"20px"} />
-						<div className={styles.product_actions}>
-							<NumberStepper
-								min={product.minimum}
-								max={product.quantity}
-								onUpdate={(value) => setQuantity(value)}
-							/>
-							<Button onClick={() => addToCart()}>
-								أضف للسلة
-							</Button>
-							<div className={styles.product_footer}>
-								<div>رقم المنتج: {product.sku}</div>
-								<div>آخر تحديث: {product.updated_at.date}</div>
-							</div>
-						</div>
+						{product.quantity > 0 && productActions()}
 					</Col>
 					<Col lg={2} md={1} />
 				</Row>

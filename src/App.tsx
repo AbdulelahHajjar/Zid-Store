@@ -1,13 +1,8 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.scss";
 
 import HomePage from "./Pages/HomePage/HomePage";
-import {
-	BrowserRouter as Router,
-	Route,
-	Switch,
-	Redirect,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NavigationBar from "./Components/NavigationBar/NavigationBar";
 import StoreContext from "Contexts/StoreContext";
 import data from "Resources/Data/data.json";
