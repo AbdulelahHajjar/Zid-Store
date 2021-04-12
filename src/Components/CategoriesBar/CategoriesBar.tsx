@@ -1,6 +1,6 @@
 import LayoutContext from "Contexts/LayoutContext";
 import { useContext } from "react";
-import { Nav, Navbar } from "react-bootstrap";
+import { Nav } from "react-bootstrap";
 import styles from "./CategoriesBar.module.scss";
 
 function CategoriesBar() {
