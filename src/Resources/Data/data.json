@@ -14,7 +14,7 @@
 				"background_color": "#3e5bbb"
 			}
 		],
-		"logo": "https://dummyimage.com/75x75/000/fff",
+		"logo": "https://i.imgur.com/IIoF6fK.png",
 		"navigation": {
 			"categories": [
 				{
@@ -42,7 +42,7 @@
 			]
 		},
 		"body": {
-			"cover_image": "https://source.unsplash.com/random/1200x500",
+			"cover_image": "https://i.imgur.com/Hoi4by6.jpg",
 			"all_products": [
 				{        
 				    "id": 19795,
@@ -51,7 +51,7 @@
 				    "sku": "Z.4365.19795",
 				    "quantity": 10,
 				    "stock_status": "Available",
-				    "image": "https://dummyimage.com/260x260/000/fff",
+				    "image": "https://picsum.photos/260",
 				    "price": 150,
 				    "old_price": 200,      
 				    "minimum": 3,
@@ -71,7 +71,7 @@
 				    "sku": "Z.4245.13595",
 				    "quantity": 100,
 				    "stock_status": "Available",
-				    "image": "https://dummyimage.com/260x260/000/fff",
+				    "image": "https://picsum.photos/260",
 				    "price": 2000,
 				    "old_price": null,      
 				    "minimum": 1,
@@ -90,7 +90,7 @@
 				    "sku": "Z.1356.48235",
 				    "quantity": 0,
 				    "stock_status": "Unvailable",
-				    "image": "https://dummyimage.com/260x260/000/fff",
+				    "image": "https://picsum.photos/260",
 				    "price": 9,
 				    "old_price": 15,      
 				    "minimum": 1,
@@ -109,7 +109,7 @@
 				    "sku": "Z.4365.19796",
 				    "quantity": 10,
 				    "stock_status": "Available",
-				    "image": "https://dummyimage.com/260x260/000/fff",
+				    "image": "https://picsum.photos/260",
 				    "price": 150,
 				    "old_price": 200,      
 				    "minimum": 3,
@@ -129,7 +129,7 @@
 				    "sku": "Z.4245.13595",
 				    "quantity": 100,
 				    "stock_status": "Available",
-				    "image": "https://dummyimage.com/260x260/000/fff",
+				    "image": "https://picsum.photos/260",
 				    "price": 2000,
 				    "old_price": null,      
 				    "minimum": 1,
@@ -148,7 +148,7 @@
 				    "sku": "Z.1356.48235",
 				    "quantity": 0,
 				    "stock_status": "Unvailable",
-				    "image": "https://dummyimage.com/260x260/000/fff",
+				    "image": "https://picsum.photos/260",
 				    "price": 9,
 				    "old_price": 15,      
 				    "minimum": 1,
@@ -167,7 +167,7 @@
 				    "sku": "Z.4365.19795",
 				    "quantity": 10,
 				    "stock_status": "Available",
-				    "image": "https://dummyimage.com/260x260/000/fff",
+				    "image": "https://picsum.photos/260",
 				    "price": 150,
 				    "old_price": 200,      
 				    "minimum": 3,
@@ -187,7 +187,7 @@
 				    "sku": "Z.4245.13595",
 				    "quantity": 100,
 				    "stock_status": "Available",
-				    "image": "https://dummyimage.com/260x260/000/fff",
+				    "image": "https://picsum.photos/260",
 				    "price": 2000,
 				    "old_price": null,      
 				    "minimum": 1,
@@ -206,7 +206,7 @@
 				    "sku": "Z.1356.48235",
 				    "quantity": 0,
 				    "stock_status": "Unvailable",
-				    "image": "https://dummyimage.com/260x260/000/fff",
+				    "image": "https://picsum.photos/260",
 				    "price": 9,
 				    "old_price": 15,      
 				    "minimum": 1,
