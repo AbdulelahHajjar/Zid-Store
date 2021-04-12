@@ -1,0 +1,15 @@
+@import "src/globals.scss";
+
+.title_container {
+    @extend .largeTitle;
+    padding: 24px 56px;
+}
+
+.products {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 36px;
+}
