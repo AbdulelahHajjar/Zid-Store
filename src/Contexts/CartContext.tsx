@@ -89,11 +89,6 @@ export function CartContextProvider({ children }) {
 			.findIndex((id) => {
 				return id === productId;
 			});
-		// if (productIndex === -1) {
-		// 	return null;
-		// } else {
-		// 	return productIndex;
-		// }
 
 		return productIndex === -1 ? null : productIndex;
 	}
