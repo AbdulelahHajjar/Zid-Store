@@ -3,6 +3,7 @@ import LayoutContext from "Contexts/LayoutContext";
 import Layout from "Models/Layout";
 import Product from "Models/Product";
 import { useContext, useEffect, useState } from "react";
+import { Container, Row, Col } from "react-bootstrap";
 import styles from "./ProductsPage.module.scss";
 
 type ProductsPagePropTypes = {
@@ -22,14 +23,20 @@ function ProductsPage(props: ProductsPagePropTypes) {
 	}, [layout.body.all_products, props.products, props.title]);
 
 	return (
-		<div>
-			<div className={styles.title_container}>{title}</div>
-			<div className={styles.products}>
-				{products.map((product) => {
-					return <ProductCardView product={product} />;
-				})}
-			</div>
-		</div>
+		<Container fluid>
+			<Row>
+				<Col md={1} />
+				<Col md={10}>
+					<div className={styles.title_container}>{title}</div>
+					<div className={styles.products}>
+						{products.map((product) => {
+							return <ProductCardView product={product} />;
+						})}
+					</div>
+				</Col>
+				<Col md={1} />
+			</Row>
+		</Container>
 	);
 }
 

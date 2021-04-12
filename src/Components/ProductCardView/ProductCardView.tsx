@@ -1,13 +1,17 @@
-import React from "react";
 import Product from "Models/Product";
 import styles from "./ProductCardView.module.scss";
 import { Link } from "react-router-dom";
 import data from "Resources/Data/data.json";
+import { useContext } from "react";
+import StoreContext from "Contexts/StoreContext";
+
 type ProductCardViewProps = {
 	product: Product;
 };
 
 function ProductCardView({ product }: ProductCardViewProps) {
+	const store = useContext(StoreContext);
+
 	return (
 		<div style={{ display: "inline-block" }}>
 			<Link
@@ -26,23 +30,25 @@ function ProductCardView({ product }: ProductCardViewProps) {
 
 					<div className={styles.details}>
 						<div>
-							<p
+							<div
 								className={`${styles.title} ${styles.truncated}`}
 							>
 								{product.name}
-							</p>
-							<p className={`${styles.subtitle}`}>Subtitle</p>
+							</div>
+							<div className={`${styles.subtitle}`}>Subtitle</div>
 						</div>
-						<div className={styles.price_details}>
-							{product.old_price && (
-								<p className={styles.old_price}>
-									{product.old_price}
-								</p>
-							)}
+						<div className={styles.price_details_container}>
+							<div className={styles.price_details}>
+								{product.old_price && (
+									<div className={styles.old_price}>
+										{product.old_price} {store.currency}
+									</div>
+								)}
 
-							<p className={styles.price}>
-								{product.price} {data.store.currency}
-							</p>
+								<div className={styles.price}>
+									{product.price} {store.currency}
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>

@@ -8,8 +8,12 @@
 .products {
     width: 100%;
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
-    justify-content: left;
-    gap: 36px;
+    justify-content: space-between;
+    row-gap: 36px;
+}
+
+.products::after {
+    content: "";
+    flex: flex-start
 }
