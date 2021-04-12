@@ -35,7 +35,7 @@
 .container {
     display: flex;
     flex-direction: row;
-    gap: 16px;
+    justify-content: space-between;
 }
 
 .spacer {
@@ -50,6 +50,23 @@
     flex-direction: column;
     margin: 0;
     padding: 0;
+}
+
+.horizontal_flex_container {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.delete_button {
+    border: none;
+    cursor: pointer;
+    background: none;
+}
+
+.delete_icon {
+    width: 30px;
+    height: 30px;
 }
 
 .price_container {

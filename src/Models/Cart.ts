@@ -18,6 +18,5 @@ export default class Cart {
 export enum CartError {
 	invalidQuantity,
 	unavailableProduct, //TODO
-	quantityExceedsStock,
 	noContextProvider,
 }

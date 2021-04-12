@@ -3,12 +3,13 @@ import styles from "./NumberStepper.module.scss";
 
 type NumberStepper = {
 	onUpdate: (number) => void;
+	initialValue?: number;
 	min?: number;
 	max?: number;
 };
 
-function NumberStepper({ onUpdate, min, max }: NumberStepper) {
-	const [value, setValue] = useState<number>(min ?? 1);
+function NumberStepper({ onUpdate, initialValue, min, max }: NumberStepper) {
+	const [value, setValue] = useState<number>(initialValue ?? min ?? 0);
 
 	useEffect(() => {
 		onUpdate(value);
