@@ -73,11 +73,7 @@ function App() {
 									path="/products"
 									component={ProductsPage}
 								/>
-								<Redirect
-									exact
-									path="/*"
-									component={HomePage}
-								/>
+								<Route exact path="/*" component={HomePage} />
 							</Switch>
 						</Router>
 					</div>
