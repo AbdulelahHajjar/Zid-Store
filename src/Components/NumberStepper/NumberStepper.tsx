@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./NumberStepper.module.scss";
 
 type NumberStepperPropTypes = {
@@ -16,6 +16,9 @@ function NumberStepper({
 }: NumberStepperPropTypes) {
 	const [value, setValue] = useState<number>(initialValue ?? min ?? 0);
 
+	useEffect(() => {
+		onUpdate(value);
+	});
 	const increment = () => {
 		if (max != null && value + 1 > max) return;
 		onUpdate(value + 1);
