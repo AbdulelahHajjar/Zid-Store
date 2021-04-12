@@ -108,7 +108,7 @@ export function CartContextProvider({ children }) {
 	function totalPrice() {
 		return cart.items
 			.map((element) => {
-				return element.product.price;
+				return element.product.price * element.quantity;
 			})
 			.reduce((a, b) => a + b, 0);
 	}
