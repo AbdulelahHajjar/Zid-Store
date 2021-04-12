@@ -15,7 +15,7 @@ import MessageLine from "Components/MessageLine/MessageLine";
 import CategoriesBar from "Components/CategoriesBar/CategoriesBar";
 import ProductPage from "Pages/ProductPage/ProductPage";
 import ProductsPage from "Pages/ProductsPage/ProductsPage";
-import CategoryPage from "Pages/CategoryPage";
+import CategoryPage from "Pages/CategoryPage/CategoryPage";
 
 /*
 	Notes to self:
