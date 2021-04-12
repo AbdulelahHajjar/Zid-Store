@@ -8,6 +8,8 @@ import styles from "./HomePage.module.scss";
 import EmojiLabel from "Components/EmojiLabel/EmojiLabel";
 import Layout from "Models/Layout";
 import ProductsSection from "Components/ProductsSection/ProductsSection";
+import CustomButton from "Components/Button/CustomButton";
+import { Link } from "react-router-dom";
 
 function HomePage() {
 	const store = useContext(StoreContext);
@@ -25,10 +27,11 @@ function HomePage() {
 				<CoverImage imageUrl={layout.body.cover_image} />
 			</div>
 
-			<div className={styles.main_content}>
-				{sections()}
-				<div style={{ height: "50vh" }}></div>
-			</div>
+			<div className={styles.main_content}>{sections()}</div>
+
+			<Link to="/products">
+				<CustomButton>جميع المنتجات</CustomButton>
+			</Link>
 		</div>
 	);
 }

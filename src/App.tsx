@@ -60,6 +60,7 @@ function App() {
 								path="/category/:link/:id"
 								component={CategoryPage}
 							/>
+							<Route path="/products" component={ProductsPage} />
 						</Router>
 					</div>
 				</StoreContext.Provider>
