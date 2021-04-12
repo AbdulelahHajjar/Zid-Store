@@ -9,6 +9,7 @@ import Spacer from "Components/Spacer/Spacer";
 import StoreContext from "Contexts/StoreContext";
 import NumberStepper from "Components/NumberStepper/NumberStepper";
 import Button from "Components/Button/CustomButton";
+import PageError from "Components/ErrorPage/PageError";
 
 function ProductPage(props) {
 	let { id } = useParams();
@@ -101,7 +102,7 @@ function ProductPage(props) {
 	};
 
 	const notFound = () => {
-		return <p>Not Found.</p>;
+		return <PageError text={"الصفحة التي تبحث عنها غير موجودة."} />;
 	};
 
 	const addToCart = () => {

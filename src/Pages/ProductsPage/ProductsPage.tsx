@@ -30,7 +30,12 @@ function ProductsPage(props: ProductsPagePropTypes) {
 					<div className={styles.title_container}>{title}</div>
 					<div className={styles.products}>
 						{products.map((product) => {
-							return <ProductCardView product={product} />;
+							return (
+								<ProductCardView
+									product={product}
+									key={product.id}
+								/>
+							);
 						})}
 					</div>
 				</Col>

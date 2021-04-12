@@ -1,8 +1,13 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.scss";
 
 import HomePage from "./Pages/HomePage/HomePage";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import {
+	BrowserRouter as Router,
+	Route,
+	Switch,
+	Redirect,
+} from "react-router-dom";
 import NavigationBar from "./Components/NavigationBar/NavigationBar";
 import StoreContext from "Contexts/StoreContext";
 import data from "Resources/Data/data.json";
@@ -50,16 +55,30 @@ function App() {
 								<CategoriesBar />
 							</div>
 
-							<Route exact path="/" component={HomePage} />
-							<Route
-								path="/product/:id"
-								component={ProductPage}
-							/>
-							<Route
-								path="/category/:link/:id"
-								component={CategoryPage}
-							/>
-							<Route path="/products" component={ProductsPage} />
+							<Switch>
+								<Route exact path="/" component={HomePage} />
+
+								<Route
+									exact
+									path="/product/:id/"
+									component={ProductPage}
+								/>
+								<Route
+									exact
+									path="/category/:link/:id"
+									component={CategoryPage}
+								/>
+								<Route
+									exact
+									path="/products"
+									component={ProductsPage}
+								/>
+								<Redirect
+									exact
+									path="/*"
+									component={HomePage}
+								/>
+							</Switch>
 						</Router>
 					</div>
 				</StoreContext.Provider>

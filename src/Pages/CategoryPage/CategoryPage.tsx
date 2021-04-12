@@ -14,7 +14,6 @@ function CategoryPage() {
 
 	useEffect(() => {
 		let intId = parseInt(id);
-
 		let category = layout.navigation.categories.find((cat) => {
 			return cat.id === intId;
 		});
