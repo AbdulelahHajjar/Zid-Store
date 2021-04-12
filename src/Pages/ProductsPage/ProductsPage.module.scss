@@ -9,11 +9,11 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    gap: 36px;
     row-gap: 36px;
 }
 
-.products::after {
-    content: "";
-    flex: flex-start
-}
+// .products::after {
+//     content: "";
+//     flex: flex-start
+// }
