@@ -6,21 +6,17 @@ import LayoutContext from "Contexts/LayoutContext";
 import HorizontalList from "Components/HorizontalList/HorizontalList";
 import styles from "./HomePage.module.scss";
 import EmojiLabel from "Components/EmojiLabel/EmojiLabel";
+import Layout from "Models/Layout";
+import ProductsSection from "Components/ProductsSection/ProductsSection";
 
 function HomePage() {
 	const store = useContext(StoreContext);
-	const layout = useContext(LayoutContext);
+	const layout: Layout = useContext<Layout>(LayoutContext);
 
-	const hotProducts = () => {
-		return layout.body.hot_products.map((product, index) => (
-			<ProductCardView key={index} product={product} />
-		));
-	};
-
-	const recentProducts = () => {
-		return layout.body.recent_products.map((product, index) => (
-			<ProductCardView key={index} product={product} />
-		));
+	const sections = () => {
+		return layout.body.sections.map((section, index) => {
+			return <ProductsSection section={section} key={index} />;
+		});
 	};
 
 	return (
@@ -30,20 +26,7 @@ function HomePage() {
 			</div>
 
 			<div className={styles.main_content}>
-				<div className={styles.section}>
-					<div className={styles.emoji_label_wrapper}>
-						<EmojiLabel emoji="🔥" text="المنتجات الشائعة" />
-					</div>
-					{hotProducts()}
-				</div>
-
-				<div className={styles.section}>
-					<div className={styles.emoji_label_wrapper}>
-						<EmojiLabel emoji="⏳" text="آخر المنتجات" />
-					</div>
-					<HorizontalList rtl>{recentProducts()}</HorizontalList>
-				</div>
-
+				{sections()}
 				<div style={{ height: "50vh" }}></div>
 			</div>
 		</div>

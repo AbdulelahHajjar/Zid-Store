@@ -11,10 +11,10 @@ import { CartContextProvider } from "Contexts/CartContext";
 
 import Store from "Models/Store";
 import Layout from "Models/Layout";
-import Cart from "Models/Cart";
 import MessageLine from "Components/MessageLine/MessageLine";
 import CategoriesBar from "Components/CategoriesBar/CategoriesBar";
 import ProductPage from "Pages/ProductPage/ProductPage";
+import ProductsPage from "Pages/ProductsPage/ProductsPage";
 
 /*
 	Notes to self:
@@ -25,7 +25,6 @@ import ProductPage from "Pages/ProductPage/ProductPage";
 function App() {
 	const [store, setStore] = useState<Store>(Store.fromJSON(data.store));
 	const [layout, setLayout] = useState<Layout>(Layout.fromJSON(data.layout));
-	const [cart, setCart] = useState<Cart>(Cart.fromJSON(data.cart));
 
 	useEffect(() => {
 		document.title = store.name;
@@ -55,6 +54,10 @@ function App() {
 							<Route
 								path="/product/:id"
 								component={ProductPage}
+							/>
+							<Route
+								path="/category/:id"
+								component={ProductsPage}
 							/>
 						</Router>
 					</div>

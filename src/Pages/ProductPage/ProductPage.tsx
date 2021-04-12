@@ -25,11 +25,9 @@ function ProductPage(props) {
 
 		var fetchedProduct: Product | undefined = props.location.state?.product;
 		if (!fetchedProduct) {
-			fetchedProduct = layout.body.hot_products
-				.concat(layout.body.recent_products)
-				.find((element) => {
-					return "" + element.id === id;
-				});
+			fetchedProduct = layout.body.all_products.find((element) => {
+				return "" + element.id === id;
+			});
 		}
 
 		if (!fetchedProduct) return;
