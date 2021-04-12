@@ -1,7 +1,24 @@
+@import "src/globals.scss";
+
 .main_content {
     margin: 0 150px;
 }
 
 .cover_image_wrapper {
     margin-bottom: 64px;
+}
+
+.all_products_section {
+    width: 100%;
+    height: 200px;
+    background-color: $light;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 24px;
+}
+
+.largeTitle {
+    @extend .largeTitle
 }

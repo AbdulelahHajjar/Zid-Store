@@ -1,7 +1,6 @@
 import Product from "Models/Product";
 import styles from "./ProductCardView.module.scss";
 import { Link } from "react-router-dom";
-import data from "Resources/Data/data.json";
 import { useContext } from "react";
 import StoreContext from "Contexts/StoreContext";
 

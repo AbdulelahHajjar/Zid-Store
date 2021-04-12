@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./HorizontalList.module.scss";
 import ChevronLeft from "Resources/Images/chevron-left.png";
 

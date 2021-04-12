@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 import ProductCardView from "Components/ProductCardView/ProductCardView";
 import StoreContext from "Contexts/StoreContext";
 import CoverImage from "Components/CoverImage/CoverImage";
@@ -10,6 +10,7 @@ import Layout from "Models/Layout";
 import ProductsSection from "Components/ProductsSection/ProductsSection";
 import CustomButton from "Components/Button/CustomButton";
 import { Link } from "react-router-dom";
+import { Button, Container, Jumbotron } from "react-bootstrap";
 
 function HomePage() {
 	const store = useContext(StoreContext);
@@ -29,9 +30,12 @@ function HomePage() {
 
 			<div className={styles.main_content}>{sections()}</div>
 
-			<Link to="/products">
-				<CustomButton>جميع المنتجات</CustomButton>
-			</Link>
+			<div className={styles.all_products_section}>
+				<div className={styles.largeTitle}>أو تصفح كل المنتجات!</div>
+				<Link to="/products">
+					<CustomButton>جميع المنتجات</CustomButton>
+				</Link>
+			</div>
 		</div>
 	);
 }
