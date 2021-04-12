@@ -12,7 +12,7 @@ function CategoriesBar() {
 				<Nav.Item as="li" key={index}>
 					<Nav.Link
 						className={styles.category}
-						href={category.link}
+						href={`/category${category.link}`}
 						key={index}
 					>
 						{category.name}

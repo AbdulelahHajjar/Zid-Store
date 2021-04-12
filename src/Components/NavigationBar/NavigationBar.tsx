@@ -14,7 +14,7 @@ import CartModal from "Pages/CartModal/CartModal";
 function NavigationBar() {
 	const layout = useContext(LayoutContext);
 	const store = useContext(StoreContext);
-	const { cart, numItems } = useContext(CartContext);
+	const { numItems } = useContext(CartContext);
 	const [showCart, setShowCart] = useState(false);
 
 	const brand = () => {
@@ -51,8 +51,8 @@ function NavigationBar() {
 			<Nav.Item>
 				<IconButton
 					icon={cartIcon}
-					badgeNumber={numItems()!} //TODO
-					alt={`Shopping Cart (Number of Items: ${numItems()!})`} //TODO
+					badgeNumber={numItems()}
+					alt={`Shopping Cart`}
 					onClick={() => setShowCart(true)}
 				/>
 			</Nav.Item>

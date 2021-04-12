@@ -2,7 +2,7 @@ import styles from "./IconButton.module.scss";
 
 type IconButtonPropTypes = {
 	icon: string;
-	badgeNumber?: number;
+	badgeNumber: number | null;
 	showZero?: boolean;
 	alt?: string;
 	onClick?: () => void;

@@ -2,6 +2,7 @@ import { Timestamp } from "./Timestamp";
 
 class Product {
 	id: number;
+	category_id: number;
 	model: string;
 	sku: string;
 	quantity: number;
@@ -17,6 +18,7 @@ class Product {
 
 	constructor(
 		id: number,
+		category_id: number,
 		model: string,
 		sku: string,
 		quantity: number,
@@ -31,6 +33,7 @@ class Product {
 		old_price: number
 	) {
 		this.id = id;
+		this.category_id = category_id;
 		this.model = model;
 		this.sku = sku;
 		this.quantity = quantity;

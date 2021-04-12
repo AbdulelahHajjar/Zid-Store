@@ -18,20 +18,19 @@
 		"navigation": {
 			"categories": [
 				{
+					"id": 0,
 					"name": "📱 جوالات",
 					"link": "/mobiles"
 				},
 				{
+					"id": 1,
 					"name": "⌨️ كيبوردات",
 					"link": "/keyboards"
 				},
 				{
+					"id": 2,
 					"name": "🖥 شاشات",
 					"link": "/monitors"
-				},
-				{
-					"name": "🪣 سطول",
-					"link": "/buckets"
 				}
 			],
 			"actions": [
@@ -47,6 +46,7 @@
 			"hot_products": [
 				{        
 				    "id": 19795,
+					"category_id": 0,
 				    "model": "store_4365",
 				    "sku": "Z.4365.19795",
 				    "quantity": 10,
@@ -66,6 +66,7 @@
 				},
 				{        
 				    "id": 14695,
+					"category_id": 1,
 				    "model": "store_42465",
 				    "sku": "Z.4245.13595",
 				    "quantity": 100,
@@ -84,6 +85,7 @@
 				},
 				{        
 				    "id": 48235,
+					"category_id": 2,
 				    "model": "store_48235",
 				    "sku": "Z.1356.48235",
 				    "quantity": 0,
@@ -104,6 +106,7 @@
 			"recent_products": [
 				{        
 				    "id": 19795,
+					"category_id": 0,
 				    "model": "store_4365",
 				    "sku": "Z.4365.19795",
 				    "quantity": 10,
@@ -123,6 +126,7 @@
 				},
 				{        
 				    "id": 14695,
+					"category_id": 1,
 				    "model": "store_42465",
 				    "sku": "Z.4245.13595",
 				    "quantity": 100,
@@ -141,6 +145,7 @@
 				},
 				{        
 				    "id": 48235,
+					"category_id": 2,
 				    "model": "store_48235",
 				    "sku": "Z.1356.48235",
 				    "quantity": 0,
@@ -159,6 +164,7 @@
 				},
 				{        
 				    "id": 19796,
+					"category_id": 1,
 				    "model": "store_4365",
 				    "sku": "Z.4365.19796",
 				    "quantity": 10,
@@ -178,6 +184,7 @@
 				},
 				{        
 				    "id": 14395,
+					"category_id": 2,
 				    "model": "store_42465",
 				    "sku": "Z.4245.13595",
 				    "quantity": 100,
@@ -196,6 +203,7 @@
 				},
 				{        
 				    "id": 53235,
+					"category_id": 0,
 				    "model": "store_48235",
 				    "sku": "Z.1356.48235",
 				    "quantity": 0,
@@ -214,6 +222,7 @@
 				},
 				{        
 				    "id": 20795,
+					"category_id": 2,
 				    "model": "store_4365",
 				    "sku": "Z.4365.19795",
 				    "quantity": 10,
@@ -233,6 +242,7 @@
 				},
 				{        
 				    "id": 14705,
+					"category_id": 0,
 				    "model": "store_42465",
 				    "sku": "Z.4245.13595",
 				    "quantity": 100,
@@ -251,6 +261,7 @@
 				},
 				{        
 				    "id": 48305,
+					"category_id": 2,
 				    "model": "store_48235",
 				    "sku": "Z.1356.48235",
 				    "quantity": 0,

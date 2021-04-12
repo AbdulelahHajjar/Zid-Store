@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "./App.scss";
 
 import HomePage from "./Pages/HomePage/HomePage";
-import CartPage from "./Pages/CartPage";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import NavigationBar from "./Components/NavigationBar/NavigationBar";
 import StoreContext from "Contexts/StoreContext";
@@ -53,7 +52,6 @@ function App() {
 							</div>
 
 							<Route exact path="/" component={HomePage} />
-							<Route exact path="/cart" component={CartPage} />
 							<Route
 								path="/product/:id"
 								component={ProductPage}
