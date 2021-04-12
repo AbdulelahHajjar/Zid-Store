@@ -106,6 +106,7 @@ function ProductPage(props) {
 
 	const addToCart = () => {
 		if (!product) return;
+		console.log(quantity);
 		cartContext?.addProduct(product, quantity);
 	};
 

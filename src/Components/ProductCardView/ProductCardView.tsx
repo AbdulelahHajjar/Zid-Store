@@ -12,7 +12,7 @@ function ProductCardView({ product }: ProductCardViewProps) {
 	const store = useContext(StoreContext);
 
 	return (
-		<div style={{ display: "inline-block" }}>
+		<div>
 			<Link
 				className={`${styles.container} link`}
 				to={{

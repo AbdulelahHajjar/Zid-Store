@@ -18,13 +18,13 @@ function NumberStepper({
 
 	const increment = () => {
 		if (max != null && value + 1 > max) return;
+		onUpdate(value + 1);
 		setValue(value + 1);
-		onUpdate(value);
 	};
 	const decrement = () => {
 		if (min != null && value - 1 < min) return;
+		onUpdate(value - 1);
 		setValue(value - 1);
-		onUpdate(value);
 	};
 
 	return (
