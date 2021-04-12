@@ -11,17 +11,15 @@ type NumberStepper = {
 function NumberStepper({ onUpdate, initialValue, min, max }: NumberStepper) {
 	const [value, setValue] = useState<number>(initialValue ?? min ?? 0);
 
-	useEffect(() => {
-		onUpdate(value);
-	}, [onUpdate, value]);
-
 	const increment = () => {
 		if (max != null && value + 1 > max) return;
 		setValue(value + 1);
+		onUpdate(value);
 	};
 	const decrement = () => {
 		if (min != null && value - 1 < min) return;
 		setValue(value - 1);
+		onUpdate(value);
 	};
 
 	return (

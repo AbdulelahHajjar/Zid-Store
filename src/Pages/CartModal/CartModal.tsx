@@ -17,6 +17,7 @@ function CartModal() {
 						<ProductCell
 							product={element.product}
 							quantity={element.quantity}
+							key={element.product.id}
 						/>
 					);
 				})}
@@ -32,7 +33,7 @@ function CartModal() {
 	};
 
 	const emptyCart = () => {
-		return <div>empty</div>;
+		return <div>ما عندك منتجات في السلة</div>;
 	};
 
 	return (

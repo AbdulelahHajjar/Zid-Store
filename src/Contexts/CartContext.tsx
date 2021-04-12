@@ -67,9 +67,11 @@ export function CartContextProvider({ children }) {
 	function deleteProduct(productId) {
 		let index = findProductIndex(productId);
 		if (index === null || index === undefined) return;
-
+		console.log("here");
 		let newItems = cart.items;
-		delete newItems[index];
+		newItems = cart.items.filter((element) => {
+			return element.product.id !== productId;
+		});
 		setItems(newItems);
 	}
 
