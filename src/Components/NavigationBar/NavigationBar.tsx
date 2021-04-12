@@ -18,16 +18,14 @@ function NavigationBar() {
 
 	const brand = () => {
 		return (
-			<Navbar.Brand href="#">
-				<Link to="/">
-					<img
-						alt={store.name}
-						src={layout.logo}
-						height="56"
-						className="d-inline-block align-top"
-					/>
-				</Link>
-			</Navbar.Brand>
+			<Link to="/">
+				<img
+					alt={store.name}
+					src={layout.logo}
+					height="56"
+					className="d-inline-block align-top"
+				/>
+			</Link>
 		);
 	};
 
@@ -47,14 +45,12 @@ function NavigationBar() {
 
 	const shoppingCart = () => {
 		return (
-			<Nav.Item>
-				<IconButton
-					icon={cartIcon}
-					badgeNumber={numItems()}
-					alt={`Shopping Cart`}
-					onClick={() => setShowCart(true)}
-				/>
-			</Nav.Item>
+			<IconButton
+				icon={cartIcon}
+				badgeNumber={numItems()}
+				alt={`Shopping Cart`}
+				onClick={() => setShowCart(true)}
+			/>
 		);
 	};
 

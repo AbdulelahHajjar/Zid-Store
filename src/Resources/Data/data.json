@@ -103,25 +103,6 @@
 				    "description": "Lorem ipsum dolor sit amet, "
 				},
 				{        
-				    "id": 48235,
-					"category_id": 2,
-				    "model": "store_48235",
-				    "sku": "Z.1356.48235",
-				    "quantity": 0,
-				    "stock_status": "Unvailable",
-				    "image": "https://dummyimage.com/260x260/000/fff",
-				    "price": 9,
-				    "old_price": 15,      
-				    "minimum": 1,
-				    "share_link": "https://share.com/62hv650l",        
-				    "updated_at": {
-				        "date": "2017-10-02 10:03:60.000000",
-				        "timezone": "UTC"
-				    },
-				    "name": "Bad Product",
-				    "description": "Lorem ipsum dolor sit amet, "
-				},
-				{        
 				    "id": 19796,
 					"category_id": 1,
 				    "model": "store_4365",

@@ -16,9 +16,9 @@ function IconButton({
 }: IconButtonPropTypes) {
 	const button = () => {
 		return (
-			<button className={styles.button}>
+			<div className={styles.button}>
 				<img src={icon} className={styles.icon} alt={alt} />
-			</button>
+			</div>
 		);
 	};
 
