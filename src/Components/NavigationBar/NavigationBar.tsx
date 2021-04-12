@@ -8,7 +8,6 @@ import Button from "Components/Button/CustomButton";
 import styles from "./NavigationBar.module.scss";
 import cartIcon from "Resources/Images/cart.png";
 import CartContext from "Contexts/CartContext";
-import logo from "Resources/Images/logo.png";
 import CartModal from "Pages/CartModal/CartModal";
 
 function NavigationBar() {

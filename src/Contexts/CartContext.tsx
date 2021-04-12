@@ -1,6 +1,6 @@
 import Cart, { CartError, QuantifiedProduct } from "Models/Cart";
 import Product from "Models/Product";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import data from "Resources/Data/data.json";
 import { Result } from "typescript-result";
 
@@ -67,7 +67,6 @@ export function CartContextProvider({ children }) {
 	function deleteProduct(productId) {
 		let index = findProductIndex(productId);
 		if (index === null || index === undefined) return;
-		console.log("here");
 		let newItems = cart.items;
 		newItems = cart.items.filter((element) => {
 			return element.product.id !== productId;

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./HorizontalList.module.scss";
 import ChevronLeft from "Resources/Images/chevron-left.png";
 
@@ -12,7 +12,7 @@ function uuidv4() {
 		/[xy]/g,
 		function (c) {
 			var r = (Math.random() * 16) | 0,
-				v = c == "x" ? r : (r & 0x3) | 0x8;
+				v = c === "x" ? r : (r & 0x3) | 0x8;
 			return v.toString(16);
 		}
 	);
@@ -24,7 +24,6 @@ function HorizontalList({ children, rtl }: HorizontalListPropTypes) {
 	const [mouseOver, setMouseOver] = useState(false);
 
 	const scroll = (change: number) => {
-		console.log(styles.container);
 		let element = document.getElementById(listId)!;
 		let duration = 300;
 		var start = element.scrollLeft,

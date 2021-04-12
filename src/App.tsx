@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.scss";
 
 import HomePage from "./Pages/HomePage/HomePage";
@@ -24,12 +24,11 @@ import CategoryPage from "Pages/CategoryPage/CategoryPage";
 */
 
 function App() {
-	const [store, setStore] = useState<Store>(Store.fromJSON(data.store));
-	const [layout, setLayout] = useState<Layout>(Layout.fromJSON(data.layout));
+	const [store] = useState<Store>(Store.fromJSON(data.store)); // setStore will be implemented when connected with a database.
+	const [layout] = useState<Layout>(Layout.fromJSON(data.layout)); // setLayout will be implemented when connected with a database.
 
 	useEffect(() => {
 		document.title = store.name;
-		console.log(store);
 	}, [store]);
 
 	return (
