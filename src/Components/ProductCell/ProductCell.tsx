@@ -1,13 +1,10 @@
-import IconButton from "Components/IconButton/IconButton";
 import NumberStepper from "Components/NumberStepper/NumberStepper";
 import CartContext from "Contexts/CartContext";
 import StoreContext from "Contexts/StoreContext";
-import { QuantifiedProduct } from "Models/Cart";
 import Product from "Models/Product";
-import React, { useContext } from "react";
+import { useContext } from "react";
 import styles from "./ProductCell.module.scss";
 import deleteIcon from "Resources/Images/delete.svg";
-import { Button, Modal } from "react-bootstrap";
 
 type ProductCellPropTypes = {
 	product: Product;

@@ -1,5 +1,5 @@
 import LayoutContext from "Contexts/LayoutContext";
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { Nav, Navbar } from "react-bootstrap";
 import styles from "./CategoriesBar.module.scss";
 

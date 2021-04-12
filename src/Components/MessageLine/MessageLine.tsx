@@ -1,4 +1,3 @@
-import React from "react";
 import Message from "Models/Message";
 import styles from "./MessageLine.module.scss";
 
