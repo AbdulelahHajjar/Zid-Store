@@ -29,7 +29,18 @@ function App() {
 
 	useEffect(() => {
 		document.title = store.name;
-	}, [store]);
+		document
+			.getElementsByTagName("html")[0]
+			.setAttribute("dir", store.language_code === "ar" ? "rtl" : "ltr");
+		document
+			.getElementsByTagName("html")[0]
+			.setAttribute("lang", store.language_code);
+
+		var favicon = document.getElementById("favicon") as HTMLLinkElement;
+		if (favicon) {
+			favicon.href = layout.logo;
+		}
+	}, [layout.logo, store]);
 
 	return (
 		<CartContextProvider>
